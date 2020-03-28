@@ -19,6 +19,7 @@
 		BAAC15A0242E49CB004030A5 /* Rank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAC159C242E49CB004030A5 /* Rank.storyboard */; };
 		BAAC15A2242E4AFB004030A5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAC15A1242E4AFB004030A5 /* Home.storyboard */; };
 		BAAC15A4242E4B01004030A5 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAC15A3242E4B01004030A5 /* Discover.storyboard */; };
+		BAF2E49F242F2FB900227905 /* UIColor-Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2E49E242F2FB900227905 /* UIColor-Extensioin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BAAC159C242E49CB004030A5 /* Rank.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rank.storyboard; sourceTree = "<group>"; };
 		BAAC15A1242E4AFB004030A5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BAAC15A3242E4B01004030A5 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		BAF2E49E242F2FB900227905 /* UIColor-Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extensioin.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		BAAC1598242E49CB004030A5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BAF2E49D242F2F9C00227905 /* Extension */,
 				BAAC1599242E49CB004030A5 /* Controller */,
 			);
 			path = Main;
@@ -147,6 +150,14 @@
 			children = (
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		BAF2E49D242F2F9C00227905 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BAF2E49E242F2FB900227905 /* UIColor-Extensioin.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +238,7 @@
 				BAAC159F242E49CB004030A5 /* MainViewController.swift in Sources */,
 				BAAC157E242E48E8004030A5 /* AppDelegate.swift in Sources */,
 				BAAC1580242E48E8004030A5 /* SceneDelegate.swift in Sources */,
+				BAF2E49F242F2FB900227905 /* UIColor-Extensioin.swift in Sources */,
 				BA61D111242E525F00D84B86 /* ChaosNavigationController.swift in Sources */,
 				BA61D10F242E51E500D84B86 /* HomeViewController.swift in Sources */,
 			);
