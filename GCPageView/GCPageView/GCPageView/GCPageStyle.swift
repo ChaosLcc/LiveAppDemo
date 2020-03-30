@@ -10,8 +10,8 @@ import UIKit
 
 struct GCPageStyle {
     var titleViewHeight: CGFloat = 44.0
-    var normalColor: UIColor = .black
-    var selectColor: UIColor = .red
+    var normalColor: UIColor = UIColor(r: 0, g: 0, b: 0)
+    var selectColor: UIColor = UIColor(r: 255, g: 0, b: 0)
     var fontSize: CGFloat = 15.0
     
     var isScrollEnable: Bool = false

@@ -47,7 +47,9 @@ extension GCPageView {
         let frame = CGRect(x: 0, y: titleView.frame.maxY, width: bounds.width, height: bounds.height - style.titleViewHeight)
         let contentView = GCContentView(frame: frame, childVcs: childVcs, parentVc: parentVc)
         contentView.backgroundColor = UIColor.randomColor()
-        titleView.delegate = contentView
         addSubview(contentView)
+        // 互相设置代理
+        titleView.delegate = contentView
+        contentView.delegate = titleView
     }
 }

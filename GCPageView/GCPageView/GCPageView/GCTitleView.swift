@@ -94,15 +94,50 @@ extension GCTitleView {
         guard let label = tap.view as? UILabel else {
             return
         }
-        label.textColor = style.selectColor
-        titleLabels[currentIndex].textColor = style.normalColor
-        // 记录下标值
-        currentIndex = label.tag
+        adjustTitleLabel(label.tag)
+        
         // 通知contentView调整
         delegate?.titleView(self, targetIndex: currentIndex)
+    }
+}
+// MARK:- GCContentViewDelegate
+extension GCTitleView: GCContentViewDelegate {
+    func contentView(_ contentView: GCContentView, scrollTo targetIndex: Int) {
+        adjustTitleLabel(targetIndex)
+    }
+    func contentView(_ contentView: GCContentView, scrollTo targetIndex: Int, progress: CGFloat) {
+        print(targetIndex)
+        print(progress)
+        // 取出label
+        let targetLabel = titleLabels[targetIndex]
+        let sourceLabel = titleLabels[currentIndex]
+        
+        // 颜色渐变
+        let deltaRGB = UIColor.getRGBDelta(style.selectColor, style.normalColor)
+        let normalRGB = style.normalColor.getRGB()
+        let selectRGB = style.selectColor.getRGB()
+        targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
+        sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
+    }
+    
+    /// 调整lable颜色和位置
+    /// - Parameter targetIndex: <#targetIndex description#>
+    private func adjustTitleLabel(_ targetIndex: Int) {
+        if targetIndex == currentIndex { return }
+        // 目标label
+        let targetLabel = titleLabels[targetIndex]
+        // 原来的label
+        let sourceLabel = titleLabels[currentIndex]
+        
+        // 切换文字颜色
+        targetLabel.textColor = style.selectColor
+        sourceLabel.textColor = style.normalColor
+        
+        // 记录下标值
+        currentIndex = targetLabel.tag
         // 调整位置
         if style.isScrollEnable {
-            var offsetX = label.center.x - bounds.width * 0.5
+            var offsetX = targetLabel.center.x - bounds.width * 0.5
             if offsetX < 0 { // 滚动的最小值
                 offsetX = 0
             }
