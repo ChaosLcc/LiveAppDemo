@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA7FE58E2431748D00CF95CF /* UIColor-Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7FE58D2431748D00CF95CF /* UIColor-Extensioin.swift */; };
 		BAF2E4AD242F489C00227905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2E4AC242F489C00227905 /* AppDelegate.swift */; };
 		BAF2E4AF242F489C00227905 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2E4AE242F489C00227905 /* SceneDelegate.swift */; };
 		BAF2E4B1242F489C00227905 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2E4B0242F489C00227905 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA7FE58D2431748D00CF95CF /* UIColor-Extensioin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extensioin.swift"; sourceTree = "<group>"; };
 		BAF2E4A9242F489C00227905 /* GCPageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCPageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF2E4AC242F489C00227905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF2E4AE242F489C00227905 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA7FE58C2431748D00CF95CF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BA7FE58D2431748D00CF95CF /* UIColor-Extensioin.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		BAF2E4A0242F489C00227905 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		BAF2E4AB242F489C00227905 /* GCPageView */ = {
 			isa = PBXGroup;
 			children = (
+				BA7FE58C2431748D00CF95CF /* Extension */,
 				BAF2E4C0242F48BD00227905 /* GCPageView */,
 				BAF2E4AC242F489C00227905 /* AppDelegate.swift */,
 				BAF2E4AE242F489C00227905 /* SceneDelegate.swift */,
@@ -161,6 +172,7 @@
 				BAF2E4C6242F490000227905 /* GCContentView.swift in Sources */,
 				BAF2E4B1242F489C00227905 /* ViewController.swift in Sources */,
 				BAF2E4C4242F48EE00227905 /* GCTitleView.swift in Sources */,
+				BA7FE58E2431748D00CF95CF /* UIColor-Extensioin.swift in Sources */,
 				BAF2E4C2242F48DE00227905 /* GCPageView.swift in Sources */,
 				BAF2E4C8242F492200227905 /* GCPageStyle.swift in Sources */,
 				BAF2E4AD242F489C00227905 /* AppDelegate.swift in Sources */,
