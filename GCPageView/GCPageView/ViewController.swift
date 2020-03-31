@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         var style = GCPageStyle()
         style.isScrollEnable = true
         style.titleViewHeight = 44
+        style.isShowScrollLine = true
         let pageView = GCPageView(frame: frame, titles: titles, childVcs: childVcs, parentVc: self, style: style)
         view.addSubview(pageView)
     }

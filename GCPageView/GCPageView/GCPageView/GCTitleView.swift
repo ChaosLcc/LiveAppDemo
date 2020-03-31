@@ -23,6 +23,13 @@ class GCTitleView: UIView {
         scrollView.scrollsToTop = false
         return scrollView
     }()
+    private lazy var bottomLine: UIView = {
+        let bottomLine = UIView()
+        bottomLine.backgroundColor = style.scrollLineColor
+        bottomLine.frame.size.height = style.scrollLineHeight
+        bottomLine.frame.origin.y = style.titleViewHeight - style.scrollLineHeight
+        return bottomLine
+    }()
     
     weak var delegate: GCTitleViewDelegate?
     
@@ -40,15 +47,19 @@ class GCTitleView: UIView {
     
 }
 extension GCTitleView {
-    func setupUI() {
+    private func setupUI() {
         addSubview(scrollView)
         // 添加label
         setupTitleLabels()
         // 设置frame
         setupTitleLabelsFrame()
+        // 指示器
+        if style.isShowScrollLine {
+            setupBottomLine()
+        }
     }
     
-    func setupTitleLabels() {
+    private func setupTitleLabels() {
         for (i, title) in titles.enumerated() {
             let label = UILabel()
             label.text = title
@@ -62,7 +73,7 @@ extension GCTitleView {
             titleLabels.append(label)
         }
     }
-    func setupTitleLabelsFrame() {
+    private func setupTitleLabelsFrame() {
         let count = titles.count
         for (i, label) in titleLabels.enumerated() {
             var w: CGFloat = 0
@@ -74,16 +85,27 @@ extension GCTitleView {
                 w = (titles[i] as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: label.font!], context: nil).width
                 if i == 0 {
                     x = style.itemMargin * 0.5
+                    if style.isShowScrollLine {
+                        bottomLine.frame.origin.x = x
+                        bottomLine.frame.size.width = w
+                    }
                 } else {
                     x = titleLabels[i - 1].frame.maxX + style.itemMargin
                 }
             } else { // 不可以滚动, 平分
                 w = bounds.width / CGFloat(count)
                 x = CGFloat(i) * w
+                if i == 0 && style.isShowScrollLine {
+                    bottomLine.frame.origin.x = 0
+                    bottomLine.frame.size.width = w
+                }
             }
             label.frame = CGRect(x: x, y: y, width: w, height: h)
         }
         scrollView.contentSize = style.isScrollEnable ? CGSize(width: titleLabels.last!.frame.maxX + style.itemMargin * 0.5, height: 0) : CGSize.zero
+    }
+    private func setupBottomLine() {
+        scrollView.addSubview(bottomLine)
     }
 }
 
@@ -94,7 +116,16 @@ extension GCTitleView {
         guard let label = tap.view as? UILabel else {
             return
         }
+        // 调整title
         adjustTitleLabel(label.tag)
+        
+        // 调整bottomLine
+        if style.isShowScrollLine {
+            UIView.animate(withDuration: 0.3) {
+                self.bottomLine.frame.origin.x = label.frame.origin.x
+                self.bottomLine.frame.size.width = label.frame.size.width
+            }            
+        }
         
         // 通知contentView调整
         delegate?.titleView(self, targetIndex: currentIndex)
@@ -118,6 +149,14 @@ extension GCTitleView: GCContentViewDelegate {
         let selectRGB = style.selectColor.getRGB()
         targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
         sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
+        
+        // 指示器移动与渐变
+        if style.isShowScrollLine {
+            let deltaX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+            let deltaW = targetLabel.frame.size.width - sourceLabel.frame.size.width
+            bottomLine.frame.origin.x = sourceLabel.frame.origin.x + deltaX * progress
+            bottomLine.frame.size.width = sourceLabel.frame.size.width + deltaW * progress
+        }
     }
     
     /// 调整lable颜色和位置

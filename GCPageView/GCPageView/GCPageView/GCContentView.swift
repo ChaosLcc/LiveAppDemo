@@ -20,6 +20,9 @@ class GCContentView: UIView {
     private var parentVc: UIViewController
     private var startOffsetX: CGFloat = 0.0
     
+    /// 是否禁止滑动, 默认不禁止
+    private var isForbidScroll: Bool = false
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -94,12 +97,15 @@ extension GCContentView: UICollectionViewDelegate {
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isForbidScroll = false
         startOffsetX = scrollView.contentOffset.x
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 合并到下面的代码 一起判断
+//        guard !isForbidScroll else { return }
         // 判断和开始时的偏移量是否一致
-        guard startOffsetX != scrollView.contentOffset.x else {
+        guard startOffsetX != scrollView.contentOffset.x, !isForbidScroll else {
             return
         }
         
@@ -120,6 +126,7 @@ extension GCContentView: UICollectionViewDelegate {
     }
     
     private func contentViewEndScroll() {
+        guard !isForbidScroll else { return }
         // 获取滚动到的位置
         let targetIndex = Int(collectionView.contentOffset.x / collectionView.bounds.width)
 //        print(targetIndex)
@@ -132,6 +139,7 @@ extension GCContentView: UICollectionViewDelegate {
 // MARK:- GCTitleViewDelegate
 extension GCContentView: GCTitleViewDelegate {
     func titleView(_ pageView: GCTitleView, targetIndex: Int) {
+        isForbidScroll = true
         collectionView.setContentOffset(CGPoint(x: bounds.width * CGFloat(targetIndex), y: 0), animated: false)
     }
 }

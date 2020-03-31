@@ -16,4 +16,8 @@ struct GCPageStyle {
     
     var isScrollEnable: Bool = false
     var itemMargin: CGFloat = 30.0
+    
+    var isShowScrollLine: Bool = false
+    var scrollLineHeight: CGFloat = 2
+    var scrollLineColor: UIColor = .red
 }
