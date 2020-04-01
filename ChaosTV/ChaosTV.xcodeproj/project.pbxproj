@@ -3,13 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45716F4668E8FF3AAB1D8786 /* Pods_ChaosTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E321C70B127E9886A11E61DB /* Pods_ChaosTV.framework */; };
 		BA61D10D242E4FF900D84B86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA61D10B242E4FF900D84B86 /* LaunchScreen.storyboard */; };
 		BA61D10F242E51E500D84B86 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D10E242E51E500D84B86 /* HomeViewController.swift */; };
 		BA61D111242E525F00D84B86 /* ChaosNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D110242E525F00D84B86 /* ChaosNavigationController.swift */; };
+		BA805F1A24342D0900B015DF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F1924342D0800B015DF /* Const.swift */; };
+		BA805F1C24342DB400B015DF /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F1B24342DB400B015DF /* AnchorViewController.swift */; };
+		BA805F20243479D600B015DF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F1F243479D600B015DF /* HomeViewModel.swift */; };
+		BA805F22243479E500B015DF /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F21243479E500B015DF /* WaterfallLayout.swift */; };
+		BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F2324347A7900B015DF /* AnchorModel.swift */; };
+		BA805F272434825600B015DF /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F262434825600B015DF /* NetworkTools.swift */; };
+		BA8BC10824341FC000225E69 /* GCPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10424341FC000225E69 /* GCPageView.swift */; };
+		BA8BC10924341FC000225E69 /* GCContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10524341FC000225E69 /* GCContentView.swift */; };
+		BA8BC10A24341FC000225E69 /* GCTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10624341FC000225E69 /* GCTitleView.swift */; };
+		BA8BC10B24341FC000225E69 /* GCPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10724341FC000225E69 /* GCPageStyle.swift */; };
+		BA8BC1122434246000225E69 /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA8BC1112434246000225E69 /* types.plist */; };
+		BA8BC1142434248A00225E69 /* HomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC1132434248A00225E69 /* HomeType.swift */; };
+		BA8BC11C2434260C00225E69 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC11B2434260C00225E69 /* BaseModel.swift */; };
 		BAAC157E242E48E8004030A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC157D242E48E8004030A5 /* AppDelegate.swift */; };
 		BAAC1580242E48E8004030A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAC157F242E48E8004030A5 /* SceneDelegate.swift */; };
 		BAAC1585242E48E8004030A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAC1583242E48E8004030A5 /* Main.storyboard */; };
@@ -23,9 +37,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67844A3D04B695006366EB54 /* Pods-ChaosTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaosTV.debug.xcconfig"; path = "Target Support Files/Pods-ChaosTV/Pods-ChaosTV.debug.xcconfig"; sourceTree = "<group>"; };
+		71DD7A210E867BCBD831B3FA /* Pods-ChaosTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaosTV.release.xcconfig"; path = "Target Support Files/Pods-ChaosTV/Pods-ChaosTV.release.xcconfig"; sourceTree = "<group>"; };
 		BA61D10C242E4FF900D84B86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA61D10E242E51E500D84B86 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA61D110242E525F00D84B86 /* ChaosNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaosNavigationController.swift; sourceTree = "<group>"; };
+		BA805F1924342D0800B015DF /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		BA805F1B24342DB400B015DF /* AnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
+		BA805F1F243479D600B015DF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BA805F21243479E500B015DF /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
+		BA805F2324347A7900B015DF /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		BA805F262434825600B015DF /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		BA8BC10424341FC000225E69 /* GCPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCPageView.swift; sourceTree = "<group>"; };
+		BA8BC10524341FC000225E69 /* GCContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCContentView.swift; sourceTree = "<group>"; };
+		BA8BC10624341FC000225E69 /* GCTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCTitleView.swift; sourceTree = "<group>"; };
+		BA8BC10724341FC000225E69 /* GCPageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCPageStyle.swift; sourceTree = "<group>"; };
+		BA8BC1112434246000225E69 /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
+		BA8BC1132434248A00225E69 /* HomeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeType.swift; sourceTree = "<group>"; };
+		BA8BC11B2434260C00225E69 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BAAC157A242E48E8004030A5 /* ChaosTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaosTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAAC157D242E48E8004030A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAAC157F242E48E8004030A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +67,7 @@
 		BAAC15A1242E4AFB004030A5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BAAC15A3242E4B01004030A5 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		BAF2E49E242F2FB900227905 /* UIColor-Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extensioin.swift"; sourceTree = "<group>"; };
+		E321C70B127E9886A11E61DB /* Pods_ChaosTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaosTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +75,148 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45716F4668E8FF3AAB1D8786 /* Pods_ChaosTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E5F4482D81705A13C82B823 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67844A3D04B695006366EB54 /* Pods-ChaosTV.debug.xcconfig */,
+				71DD7A210E867BCBD831B3FA /* Pods-ChaosTV.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9FD7579F8B7FE5D37961A408 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E321C70B127E9886A11E61DB /* Pods_ChaosTV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA805F1824342CF500B015DF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BA805F1924342D0800B015DF /* Const.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BA805F252434823800B015DF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BA805F262434825600B015DF /* NetworkTools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		BA8BC10324341FC000225E69 /* GCPageView */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BC10424341FC000225E69 /* GCPageView.swift */,
+				BA8BC10524341FC000225E69 /* GCContentView.swift */,
+				BA8BC10624341FC000225E69 /* GCTitleView.swift */,
+				BA8BC10724341FC000225E69 /* GCPageStyle.swift */,
+			);
+			path = GCPageView;
+			sourceTree = "<group>";
+		};
+		BA8BC10C24341FDF00225E69 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAAC15A1242E4AFB004030A5 /* Home.storyboard */,
+				BA61D10E242E51E500D84B86 /* HomeViewController.swift */,
+				BA61D110242E525F00D84B86 /* ChaosNavigationController.swift */,
+				BA805F1B24342DB400B015DF /* AnchorViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA8BC10D24341FE800225E69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BC1132434248A00225E69 /* HomeType.swift */,
+				BA805F2324347A7900B015DF /* AnchorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA8BC10E24341FF100225E69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA8BC10F24341FF800225E69 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BA805F1F243479D600B015DF /* HomeViewModel.swift */,
+				BA805F21243479E500B015DF /* WaterfallLayout.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		BA8BC1102434246000225E69 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BC1112434246000225E69 /* types.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BA8BC1162434259E00225E69 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BC1172434259E00225E69 /* ViewModel */,
+				BA8BC1182434259E00225E69 /* Controller */,
+				BA8BC1192434259E00225E69 /* Model */,
+				BA8BC11A2434259E00225E69 /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BA8BC1172434259E00225E69 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA8BC1182434259E00225E69 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA8BC1192434259E00225E69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BC11B2434260C00225E69 /* BaseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA8BC11A2434259E00225E69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BAAC1571242E48E8004030A5 = {
 			isa = PBXGroup;
 			children = (
 				BAAC157C242E48E8004030A5 /* ChaosTV */,
 				BAAC157B242E48E8004030A5 /* Products */,
+				8E5F4482D81705A13C82B823 /* Pods */,
+				9FD7579F8B7FE5D37961A408 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +231,7 @@
 		BAAC157C242E48E8004030A5 /* ChaosTV */ = {
 			isa = PBXGroup;
 			children = (
+				BA8BC1102434246000225E69 /* Resource */,
 				BAAC1593242E49CB004030A5 /* Classes */,
 				BAAC157D242E48E8004030A5 /* AppDelegate.swift */,
 				BAAC157F242E48E8004030A5 /* SceneDelegate.swift */,
@@ -89,7 +251,7 @@
 				BAAC1596242E49CB004030A5 /* Profile */,
 				BAAC1598242E49CB004030A5 /* Main */,
 				BAAC159B242E49CB004030A5 /* Rank */,
-				BAAC159D242E49CB004030A5 /* Base */,
+				BA8BC1162434259E00225E69 /* Base */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -97,9 +259,10 @@
 		BAAC1594242E49CB004030A5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				BAAC15A1242E4AFB004030A5 /* Home.storyboard */,
-				BA61D10E242E51E500D84B86 /* HomeViewController.swift */,
-				BA61D110242E525F00D84B86 /* ChaosNavigationController.swift */,
+				BA8BC10F24341FF800225E69 /* Other */,
+				BA8BC10E24341FF100225E69 /* View */,
+				BA8BC10D24341FE800225E69 /* Model */,
+				BA8BC10C24341FDF00225E69 /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -115,6 +278,7 @@
 		BAAC1596242E49CB004030A5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BA805F252434823800B015DF /* Tools */,
 				BAAC1597242E49CB004030A5 /* Profile.storyboard */,
 			);
 			path = Profile;
@@ -123,6 +287,8 @@
 		BAAC1598242E49CB004030A5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BA805F1824342CF500B015DF /* Common */,
+				BA8BC10324341FC000225E69 /* GCPageView */,
 				BAF2E49D242F2F9C00227905 /* Extension */,
 				BAAC1599242E49CB004030A5 /* Controller */,
 			);
@@ -145,13 +311,6 @@
 			path = Rank;
 			sourceTree = "<group>";
 		};
-		BAAC159D242E49CB004030A5 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		BAF2E49D242F2F9C00227905 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +326,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAAC158E242E48EA004030A5 /* Build configuration list for PBXNativeTarget "ChaosTV" */;
 			buildPhases = (
+				72F54DAC5CEE8BB60494596A /* [CP] Check Pods Manifest.lock */,
 				BAAC1576242E48E8004030A5 /* Sources */,
 				BAAC1577242E48E8004030A5 /* Frameworks */,
 				BAAC1578242E48E8004030A5 /* Resources */,
+				E80C219532F309D433A39BF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +381,7 @@
 			files = (
 				BAAC15A0242E49CB004030A5 /* Rank.storyboard in Resources */,
 				BAAC1587242E48EA004030A5 /* Assets.xcassets in Resources */,
+				BA8BC1122434246000225E69 /* types.plist in Resources */,
 				BAAC15A2242E4AFB004030A5 /* Home.storyboard in Resources */,
 				BAAC159E242E49CB004030A5 /* Profile.storyboard in Resources */,
 				BA61D10D242E4FF900D84B86 /* LaunchScreen.storyboard in Resources */,
@@ -230,17 +392,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72F54DAC5CEE8BB60494596A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChaosTV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E80C219532F309D433A39BF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChaosTV/Pods-ChaosTV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChaosTV/Pods-ChaosTV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChaosTV/Pods-ChaosTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BAAC1576242E48E8004030A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA805F22243479E500B015DF /* WaterfallLayout.swift in Sources */,
+				BA8BC10B24341FC000225E69 /* GCPageStyle.swift in Sources */,
 				BAAC159F242E49CB004030A5 /* MainViewController.swift in Sources */,
 				BAAC157E242E48E8004030A5 /* AppDelegate.swift in Sources */,
+				BA8BC10A24341FC000225E69 /* GCTitleView.swift in Sources */,
 				BAAC1580242E48E8004030A5 /* SceneDelegate.swift in Sources */,
+				BA8BC10824341FC000225E69 /* GCPageView.swift in Sources */,
+				BA8BC11C2434260C00225E69 /* BaseModel.swift in Sources */,
+				BA8BC1142434248A00225E69 /* HomeType.swift in Sources */,
 				BAF2E49F242F2FB900227905 /* UIColor-Extensioin.swift in Sources */,
 				BA61D111242E525F00D84B86 /* ChaosNavigationController.swift in Sources */,
+				BA8BC10924341FC000225E69 /* GCContentView.swift in Sources */,
 				BA61D10F242E51E500D84B86 /* HomeViewController.swift in Sources */,
+				BA805F1A24342D0900B015DF /* Const.swift in Sources */,
+				BA805F272434825600B015DF /* NetworkTools.swift in Sources */,
+				BA805F20243479D600B015DF /* HomeViewModel.swift in Sources */,
+				BA805F1C24342DB400B015DF /* AnchorViewController.swift in Sources */,
+				BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +598,7 @@
 		};
 		BAAC158F242E48EA004030A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67844A3D04B695006366EB54 /* Pods-ChaosTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -391,6 +608,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixarm.ChaosTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -400,6 +618,7 @@
 		};
 		BAAC1590242E48EA004030A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71DD7A210E867BCBD831B3FA /* Pods-ChaosTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -19,3 +19,4 @@ class ChaosNavigationController: UINavigationController {
         return .lightContent
     }
 }
+
