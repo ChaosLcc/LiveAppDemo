@@ -61,13 +61,14 @@ extension AnchorViewController {
 extension AnchorViewController : UICollectionViewDataSource, WaterfallLayoutDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return homeVM.anchorModels.count
+//        return homeVM.anchorModels.count
+        return 14
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kAnchorCellID, for: indexPath) as! HomeViewCell
         
-        cell.anchorModel = homeVM.anchorModels[indexPath.item]
+//        cell.anchorModel = homeVM.anchorModels[indexPath.item]
         
         if indexPath.item == homeVM.anchorModels.count - 1 {
             loadData(index: homeVM.anchorModels.count)
@@ -77,8 +78,8 @@ extension AnchorViewController : UICollectionViewDataSource, WaterfallLayoutData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let liveVc = RoomViewController()
-//        navigationController?.pushViewController(liveVc, animated: true)
+        let liveVc = RoomViewController()
+        navigationController?.pushViewController(liveVc, animated: true)
     }
     
     func waterfallLayout(_ layout: WaterfallLayout, indexPath: IndexPath) -> CGFloat {

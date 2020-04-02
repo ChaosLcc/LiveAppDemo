@@ -10,7 +10,13 @@ import UIKit
 
 protocol WaterfallLayoutDataSource: AnyObject {
     func waterfallLayout(_ layout: WaterfallLayout, indexPath: IndexPath) -> CGFloat
-    @objc optional func numberOfColsInWaterfallLayout(_ layout: WaterfallLayout) -> Int
+    // 可选的协议方法, 可以在协议扩展里面给一个默认实现, 如下
+    func numberOfColsInWaterfallLayout(_ layout: WaterfallLayout) -> Int
+}
+extension WaterfallLayoutDataSource {
+    func numberOfColsInWaterfallLayout(_ layout: WaterfallLayout) -> Int {
+        return 2
+    }
 }
 class WaterfallLayout: UICollectionViewFlowLayout {
     weak var dataSource: WaterfallLayoutDataSource?

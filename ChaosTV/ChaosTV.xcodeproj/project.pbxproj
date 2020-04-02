@@ -17,6 +17,10 @@
 		BA805F22243479E500B015DF /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F21243479E500B015DF /* WaterfallLayout.swift */; };
 		BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F2324347A7900B015DF /* AnchorModel.swift */; };
 		BA805F272434825600B015DF /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F262434825600B015DF /* NetworkTools.swift */; };
+		BA8799912435682D0051880B /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA87998F2435682D0051880B /* HomeViewCell.xib */; };
+		BA8799922435682D0051880B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8799902435682D0051880B /* HomeViewCell.swift */; };
+		BA8799992435888A0051880B /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8799972435888A0051880B /* RoomViewController.swift */; };
+		BA87999A2435888A0051880B /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8799982435888A0051880B /* RoomViewController.xib */; };
 		BA8BC10824341FC000225E69 /* GCPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10424341FC000225E69 /* GCPageView.swift */; };
 		BA8BC10924341FC000225E69 /* GCContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10524341FC000225E69 /* GCContentView.swift */; };
 		BA8BC10A24341FC000225E69 /* GCTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10624341FC000225E69 /* GCTitleView.swift */; };
@@ -48,6 +52,10 @@
 		BA805F21243479E500B015DF /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		BA805F2324347A7900B015DF /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		BA805F262434825600B015DF /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		BA87998F2435682D0051880B /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		BA8799902435682D0051880B /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		BA8799972435888A0051880B /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		BA8799982435888A0051880B /* RoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
 		BA8BC10424341FC000225E69 /* GCPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCPageView.swift; sourceTree = "<group>"; };
 		BA8BC10524341FC000225E69 /* GCContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCContentView.swift; sourceTree = "<group>"; };
 		BA8BC10624341FC000225E69 /* GCTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCTitleView.swift; sourceTree = "<group>"; };
@@ -115,6 +123,39 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		BA8799932435882E0051880B /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				BA879996243588480051880B /* View */,
+				BA879995243588410051880B /* Model */,
+				BA879994243588370051880B /* Controller */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		BA879994243588370051880B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA8799972435888A0051880B /* RoomViewController.swift */,
+				BA8799982435888A0051880B /* RoomViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA879995243588410051880B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA879996243588480051880B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BA8BC10324341FC000225E69 /* GCPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +190,8 @@
 		BA8BC10E24341FF100225E69 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA8799902435682D0051880B /* HomeViewCell.swift */,
+				BA87998F2435682D0051880B /* HomeViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +289,7 @@
 		BAAC1593242E49CB004030A5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA8799932435882E0051880B /* Live */,
 				BAAC1594242E49CB004030A5 /* Home */,
 				BAAC1595242E49CB004030A5 /* Discover */,
 				BAAC1596242E49CB004030A5 /* Profile */,
@@ -382,7 +426,9 @@
 				BAAC15A0242E49CB004030A5 /* Rank.storyboard in Resources */,
 				BAAC1587242E48EA004030A5 /* Assets.xcassets in Resources */,
 				BA8BC1122434246000225E69 /* types.plist in Resources */,
+				BA8799912435682D0051880B /* HomeViewCell.xib in Resources */,
 				BAAC15A2242E4AFB004030A5 /* Home.storyboard in Resources */,
+				BA87999A2435888A0051880B /* RoomViewController.xib in Resources */,
 				BAAC159E242E49CB004030A5 /* Profile.storyboard in Resources */,
 				BA61D10D242E4FF900D84B86 /* LaunchScreen.storyboard in Resources */,
 				BAAC15A4242E4B01004030A5 /* Discover.storyboard in Resources */,
@@ -442,9 +488,11 @@
 				BA805F22243479E500B015DF /* WaterfallLayout.swift in Sources */,
 				BA8BC10B24341FC000225E69 /* GCPageStyle.swift in Sources */,
 				BAAC159F242E49CB004030A5 /* MainViewController.swift in Sources */,
+				BA8799992435888A0051880B /* RoomViewController.swift in Sources */,
 				BAAC157E242E48E8004030A5 /* AppDelegate.swift in Sources */,
 				BA8BC10A24341FC000225E69 /* GCTitleView.swift in Sources */,
 				BAAC1580242E48E8004030A5 /* SceneDelegate.swift in Sources */,
+				BA8799922435682D0051880B /* HomeViewCell.swift in Sources */,
 				BA8BC10824341FC000225E69 /* GCPageView.swift in Sources */,
 				BA8BC11C2434260C00225E69 /* BaseModel.swift in Sources */,
 				BA8BC1142434248A00225E69 /* HomeType.swift in Sources */,
