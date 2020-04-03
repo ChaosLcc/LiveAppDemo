@@ -17,6 +17,7 @@
 		BA805F22243479E500B015DF /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F21243479E500B015DF /* WaterfallLayout.swift */; };
 		BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F2324347A7900B015DF /* AnchorModel.swift */; };
 		BA805F272434825600B015DF /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F262434825600B015DF /* NetworkTools.swift */; };
+		BA8293FB243730F400F85367 /* Emitterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8293FA243730F400F85367 /* Emitterable.swift */; };
 		BA8799912435682D0051880B /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA87998F2435682D0051880B /* HomeViewCell.xib */; };
 		BA8799922435682D0051880B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8799902435682D0051880B /* HomeViewCell.swift */; };
 		BA8799992435888A0051880B /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8799972435888A0051880B /* RoomViewController.swift */; };
@@ -52,6 +53,7 @@
 		BA805F21243479E500B015DF /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		BA805F2324347A7900B015DF /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		BA805F262434825600B015DF /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		BA8293FA243730F400F85367 /* Emitterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitterable.swift; sourceTree = "<group>"; };
 		BA87998F2435682D0051880B /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		BA8799902435682D0051880B /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		BA8799972435888A0051880B /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 				BA805F262434825600B015DF /* NetworkTools.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		BA8293F9243730D600F85367 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BA8293FA243730F400F85367 /* Emitterable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		BA8799932435882E0051880B /* Live */ = {
@@ -331,6 +341,7 @@
 		BAAC1598242E49CB004030A5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BA8293F9243730D600F85367 /* Protocol */,
 				BA805F1824342CF500B015DF /* Common */,
 				BA8BC10324341FC000225E69 /* GCPageView */,
 				BAF2E49D242F2F9C00227905 /* Extension */,
@@ -505,6 +516,7 @@
 				BA805F20243479D600B015DF /* HomeViewModel.swift in Sources */,
 				BA805F1C24342DB400B015DF /* AnchorViewController.swift in Sources */,
 				BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */,
+				BA8293FB243730F400F85367 /* Emitterable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

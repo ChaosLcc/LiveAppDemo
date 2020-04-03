@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoomViewController: UIViewController {
+class RoomViewController: UIViewController, Emitterable {
     
     // MARK: 控件属性
     @IBOutlet weak var bgImageView: UIImageView!
@@ -66,6 +66,9 @@ extension RoomViewController {
             print("点击了更多")
         case 4:
             print("点击了粒子")
+            let point = CGPoint(x: sender.center.x + 20, y: kScreenH - sender.frame.size.height * 0.5 - kBottomSafeHeight)
+            sender.isSelected = !sender.isSelected
+            sender.isSelected ? startEmittering(point) : stopEnittering()
         default:
             fatalError("未处理按钮")
         }

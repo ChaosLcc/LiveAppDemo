@@ -34,18 +34,30 @@
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hev-yY-urS" userLabel="分享">
                             <rect key="frame" x="74.666666666666671" y="0.0" width="75.000000000000014" height="44"/>
                             <state key="normal" image="menu_btn_share"/>
+                            <connections>
+                                <action selector="bottomMenuClick:" destination="-1" eventType="touchUpInside" id="NAe-0p-4c2"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cy-Tb-DyF" userLabel="礼物">
                             <rect key="frame" x="149.66666666666666" y="0.0" width="74.666666666666657" height="44"/>
                             <state key="normal" image="room_btn_gift"/>
+                            <connections>
+                                <action selector="bottomMenuClick:" destination="-1" eventType="touchUpInside" id="rX7-BD-L3z"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyd-Om-uaR" userLabel="更多">
                             <rect key="frame" x="224.33333333333337" y="0.0" width="75" height="44"/>
                             <state key="normal" image="room_btn_more"/>
+                            <connections>
+                                <action selector="bottomMenuClick:" destination="-1" eventType="touchUpInside" id="B4y-lB-Sda"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgf-MS-M0A" userLabel="星星">
                             <rect key="frame" x="299.33333333333331" y="0.0" width="74.666666666666686" height="44"/>
                             <state key="normal" image="room_btn_qfstar"/>
+                            <connections>
+                                <action selector="bottomMenuClick:" destination="-1" eventType="touchUpInside" id="Ysq-pd-Bf1"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
