@@ -17,6 +17,7 @@
 		BA805F22243479E500B015DF /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F21243479E500B015DF /* WaterfallLayout.swift */; };
 		BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F2324347A7900B015DF /* AnchorModel.swift */; };
 		BA805F272434825600B015DF /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F262434825600B015DF /* NetworkTools.swift */; };
+		BA813A87243AB5B30013E937 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA813A86243AB5B30013E937 /* NibLoadable.swift */; };
 		BA8293FB243730F400F85367 /* Emitterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8293FA243730F400F85367 /* Emitterable.swift */; };
 		BA8799912435682D0051880B /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA87998F2435682D0051880B /* HomeViewCell.xib */; };
 		BA8799922435682D0051880B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8799902435682D0051880B /* HomeViewCell.swift */; };
@@ -53,6 +54,7 @@
 		BA805F21243479E500B015DF /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		BA805F2324347A7900B015DF /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		BA805F262434825600B015DF /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		BA813A86243AB5B30013E937 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		BA8293FA243730F400F85367 /* Emitterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitterable.swift; sourceTree = "<group>"; };
 		BA87998F2435682D0051880B /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		BA8799902435682D0051880B /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				BA8293FA243730F400F85367 /* Emitterable.swift */,
+				BA813A86243AB5B30013E937 /* NibLoadable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				BAAC159F242E49CB004030A5 /* MainViewController.swift in Sources */,
 				BA8799992435888A0051880B /* RoomViewController.swift in Sources */,
 				BAAC157E242E48E8004030A5 /* AppDelegate.swift in Sources */,
+				BA813A87243AB5B30013E937 /* NibLoadable.swift in Sources */,
 				BA8BC10A24341FC000225E69 /* GCTitleView.swift in Sources */,
 				BAAC1580242E48E8004030A5 /* SceneDelegate.swift in Sources */,
 				BA8799922435682D0051880B /* HomeViewCell.swift in Sources */,

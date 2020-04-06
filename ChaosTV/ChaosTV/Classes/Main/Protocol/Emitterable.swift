@@ -9,7 +9,8 @@
 import UIKit
 
 protocol Emitterable {
-    
+    func startEmittering(_ point: CGPoint)
+    func stopEnittering()
 }
 extension Emitterable where Self: UIViewController {
     func startEmittering(_ point: CGPoint) {
