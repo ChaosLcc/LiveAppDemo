@@ -11,6 +11,12 @@
 		BA61D10D242E4FF900D84B86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA61D10B242E4FF900D84B86 /* LaunchScreen.storyboard */; };
 		BA61D10F242E51E500D84B86 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D10E242E51E500D84B86 /* HomeViewController.swift */; };
 		BA61D111242E525F00D84B86 /* ChaosNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D110242E525F00D84B86 /* ChaosNavigationController.swift */; };
+		BA7F3546243C7CEA007995BF /* GCPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F3540243C7CEA007995BF /* GCPageStyle.swift */; };
+		BA7F3547243C7CEA007995BF /* GCContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F3541243C7CEA007995BF /* GCContentView.swift */; };
+		BA7F3548243C7CEA007995BF /* GCPageCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F3542243C7CEA007995BF /* GCPageCollectionViewLayout.swift */; };
+		BA7F3549243C7CEA007995BF /* GCTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F3543243C7CEA007995BF /* GCTitleView.swift */; };
+		BA7F354A243C7CEA007995BF /* GCPageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F3544243C7CEA007995BF /* GCPageCollectionView.swift */; };
+		BA7F354B243C7CEA007995BF /* GCPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F3545243C7CEA007995BF /* GCPageView.swift */; };
 		BA805F1A24342D0900B015DF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F1924342D0800B015DF /* Const.swift */; };
 		BA805F1C24342DB400B015DF /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F1B24342DB400B015DF /* AnchorViewController.swift */; };
 		BA805F20243479D600B015DF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F1F243479D600B015DF /* HomeViewModel.swift */; };
@@ -23,10 +29,6 @@
 		BA8799922435682D0051880B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8799902435682D0051880B /* HomeViewCell.swift */; };
 		BA8799992435888A0051880B /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8799972435888A0051880B /* RoomViewController.swift */; };
 		BA87999A2435888A0051880B /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8799982435888A0051880B /* RoomViewController.xib */; };
-		BA8BC10824341FC000225E69 /* GCPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10424341FC000225E69 /* GCPageView.swift */; };
-		BA8BC10924341FC000225E69 /* GCContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10524341FC000225E69 /* GCContentView.swift */; };
-		BA8BC10A24341FC000225E69 /* GCTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10624341FC000225E69 /* GCTitleView.swift */; };
-		BA8BC10B24341FC000225E69 /* GCPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC10724341FC000225E69 /* GCPageStyle.swift */; };
 		BA8BC1122434246000225E69 /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA8BC1112434246000225E69 /* types.plist */; };
 		BA8BC1142434248A00225E69 /* HomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC1132434248A00225E69 /* HomeType.swift */; };
 		BA8BC11C2434260C00225E69 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BC11B2434260C00225E69 /* BaseModel.swift */; };
@@ -48,6 +50,12 @@
 		BA61D10C242E4FF900D84B86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA61D10E242E51E500D84B86 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA61D110242E525F00D84B86 /* ChaosNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaosNavigationController.swift; sourceTree = "<group>"; };
+		BA7F3540243C7CEA007995BF /* GCPageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCPageStyle.swift; path = "../../../../../GCPageView的扩展/GCPageView/GCPageView/GCPageStyle.swift"; sourceTree = "<group>"; };
+		BA7F3541243C7CEA007995BF /* GCContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCContentView.swift; path = "../../../../../GCPageView的扩展/GCPageView/GCPageView/GCContentView.swift"; sourceTree = "<group>"; };
+		BA7F3542243C7CEA007995BF /* GCPageCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCPageCollectionViewLayout.swift; path = "../../../../../GCPageView的扩展/GCPageView/GCPageView/GCPageCollectionViewLayout.swift"; sourceTree = "<group>"; };
+		BA7F3543243C7CEA007995BF /* GCTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCTitleView.swift; path = "../../../../../GCPageView的扩展/GCPageView/GCPageView/GCTitleView.swift"; sourceTree = "<group>"; };
+		BA7F3544243C7CEA007995BF /* GCPageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCPageCollectionView.swift; path = "../../../../../GCPageView的扩展/GCPageView/GCPageView/GCPageCollectionView.swift"; sourceTree = "<group>"; };
+		BA7F3545243C7CEA007995BF /* GCPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCPageView.swift; path = "../../../../../GCPageView的扩展/GCPageView/GCPageView/GCPageView.swift"; sourceTree = "<group>"; };
 		BA805F1924342D0800B015DF /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		BA805F1B24342DB400B015DF /* AnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
 		BA805F1F243479D600B015DF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -60,10 +68,6 @@
 		BA8799902435682D0051880B /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		BA8799972435888A0051880B /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		BA8799982435888A0051880B /* RoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
-		BA8BC10424341FC000225E69 /* GCPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCPageView.swift; sourceTree = "<group>"; };
-		BA8BC10524341FC000225E69 /* GCContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCContentView.swift; sourceTree = "<group>"; };
-		BA8BC10624341FC000225E69 /* GCTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCTitleView.swift; sourceTree = "<group>"; };
-		BA8BC10724341FC000225E69 /* GCPageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCPageStyle.swift; sourceTree = "<group>"; };
 		BA8BC1112434246000225E69 /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
 		BA8BC1132434248A00225E69 /* HomeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeType.swift; sourceTree = "<group>"; };
 		BA8BC11B2434260C00225E69 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -172,10 +176,12 @@
 		BA8BC10324341FC000225E69 /* GCPageView */ = {
 			isa = PBXGroup;
 			children = (
-				BA8BC10424341FC000225E69 /* GCPageView.swift */,
-				BA8BC10524341FC000225E69 /* GCContentView.swift */,
-				BA8BC10624341FC000225E69 /* GCTitleView.swift */,
-				BA8BC10724341FC000225E69 /* GCPageStyle.swift */,
+				BA7F3541243C7CEA007995BF /* GCContentView.swift */,
+				BA7F3544243C7CEA007995BF /* GCPageCollectionView.swift */,
+				BA7F3542243C7CEA007995BF /* GCPageCollectionViewLayout.swift */,
+				BA7F3540243C7CEA007995BF /* GCPageStyle.swift */,
+				BA7F3545243C7CEA007995BF /* GCPageView.swift */,
+				BA7F3543243C7CEA007995BF /* GCTitleView.swift */,
 			);
 			path = GCPageView;
 			sourceTree = "<group>";
@@ -500,25 +506,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA805F22243479E500B015DF /* WaterfallLayout.swift in Sources */,
-				BA8BC10B24341FC000225E69 /* GCPageStyle.swift in Sources */,
 				BAAC159F242E49CB004030A5 /* MainViewController.swift in Sources */,
 				BA8799992435888A0051880B /* RoomViewController.swift in Sources */,
 				BAAC157E242E48E8004030A5 /* AppDelegate.swift in Sources */,
 				BA813A87243AB5B30013E937 /* NibLoadable.swift in Sources */,
-				BA8BC10A24341FC000225E69 /* GCTitleView.swift in Sources */,
+				BA7F3546243C7CEA007995BF /* GCPageStyle.swift in Sources */,
+				BA7F354A243C7CEA007995BF /* GCPageCollectionView.swift in Sources */,
+				BA7F3547243C7CEA007995BF /* GCContentView.swift in Sources */,
 				BAAC1580242E48E8004030A5 /* SceneDelegate.swift in Sources */,
 				BA8799922435682D0051880B /* HomeViewCell.swift in Sources */,
-				BA8BC10824341FC000225E69 /* GCPageView.swift in Sources */,
 				BA8BC11C2434260C00225E69 /* BaseModel.swift in Sources */,
 				BA8BC1142434248A00225E69 /* HomeType.swift in Sources */,
 				BAF2E49F242F2FB900227905 /* UIColor-Extensioin.swift in Sources */,
 				BA61D111242E525F00D84B86 /* ChaosNavigationController.swift in Sources */,
-				BA8BC10924341FC000225E69 /* GCContentView.swift in Sources */,
+				BA7F3548243C7CEA007995BF /* GCPageCollectionViewLayout.swift in Sources */,
 				BA61D10F242E51E500D84B86 /* HomeViewController.swift in Sources */,
 				BA805F1A24342D0900B015DF /* Const.swift in Sources */,
 				BA805F272434825600B015DF /* NetworkTools.swift in Sources */,
+				BA7F3549243C7CEA007995BF /* GCTitleView.swift in Sources */,
 				BA805F20243479D600B015DF /* HomeViewModel.swift in Sources */,
 				BA805F1C24342DB400B015DF /* AnchorViewController.swift in Sources */,
+				BA7F354B243C7CEA007995BF /* GCPageView.swift in Sources */,
 				BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */,
 				BA8293FB243730F400F85367 /* Emitterable.swift in Sources */,
 			);

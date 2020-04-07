@@ -31,7 +31,6 @@ class GCContentView: UIView {
         layout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
-//        collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kContentViewCellID)
         collectionView.dataSource = self
         collectionView.delegate = self

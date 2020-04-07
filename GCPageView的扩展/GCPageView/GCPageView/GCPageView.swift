@@ -37,14 +37,14 @@ extension GCPageView {
         setupContentView()
     }
     private func setupTitleView() {
-        let frame = CGRect(x: 0, y: 0, width: bounds.width, height: style.titleViewHeight)
+        let frame = CGRect(x: 0, y: 0, width: bounds.width, height: style.titleHeight)
         let titleView = GCTitleView(frame: frame, titles: titles, style: style)
         titleView.backgroundColor = UIColor.randomColor()
         self.titleView = titleView
         addSubview(titleView)
     }
     private func setupContentView() {
-        let frame = CGRect(x: 0, y: titleView.frame.maxY, width: bounds.width, height: bounds.height - style.titleViewHeight)
+        let frame = CGRect(x: 0, y: titleView.frame.maxY, width: bounds.width, height: bounds.height - style.titleHeight)
         let contentView = GCContentView(frame: frame, childVcs: childVcs, parentVc: parentVc)
         contentView.backgroundColor = UIColor.randomColor()
         addSubview(contentView)

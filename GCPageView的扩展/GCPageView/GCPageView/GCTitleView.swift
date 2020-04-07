@@ -25,14 +25,25 @@ class GCTitleView: UIView {
     }()
     private lazy var bottomLine: UIView = {
         let bottomLine = UIView()
-        bottomLine.backgroundColor = style.scrollLineColor
-        bottomLine.frame.size.height = style.scrollLineHeight
-        bottomLine.frame.origin.y = style.titleViewHeight - style.scrollLineHeight
+        bottomLine.backgroundColor = style.bottomLineColor
+        bottomLine.frame.size.height = style.bottomLineH
+        bottomLine.frame.origin.y = style.titleHeight - style.bottomLineH
         return bottomLine
+    }()
+    private lazy var coverView : UIView = {
+        let coverView = UIView()
+        coverView.backgroundColor = self.style.coverBgColor
+        coverView.alpha = 0.7
+        return coverView
     }()
     
     weak var delegate: GCTitleViewDelegate?
     
+    // MARK: 计算属性
+    private lazy var normalColorRGB : (r : CGFloat, g : CGFloat, b : CGFloat) =
+        self.style.normalColor.getRGB()
+    
+    private lazy var selectedColorRGB : (r : CGFloat, g : CGFloat, b : CGFloat) = self.style.selectedColor.getRGB()
     
     init(frame: CGRect, titles: [String], style: GCPageStyle) {
         self.titles = titles
@@ -54,7 +65,7 @@ extension GCTitleView {
         // 设置frame
         setupTitleLabelsFrame()
         // 指示器
-        if style.isShowScrollLine {
+        if style.isShowBottomLine {
             setupBottomLine()
         }
     }
@@ -64,8 +75,8 @@ extension GCTitleView {
             let label = UILabel()
             label.text = title
             label.textAlignment = .center
-            label.textColor = i == 0 ? style.selectColor : style.normalColor
-            label.font = UIFont.systemFont(ofSize: style.fontSize)
+            label.textColor = i == 0 ? style.selectedColor : style.normalColor
+            label.font = style.font
             label.tag = i
             label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(titleLabelTap(_:))))
             label.isUserInteractionEnabled = true
@@ -84,25 +95,25 @@ extension GCTitleView {
             if style.isScrollEnable { // 可以滚动
                 w = (titles[i] as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: label.font!], context: nil).width
                 if i == 0 {
-                    x = style.itemMargin * 0.5
-                    if style.isShowScrollLine {
+                    x = style.titleMargin * 0.5
+                    if style.isShowBottomLine {
                         bottomLine.frame.origin.x = x
                         bottomLine.frame.size.width = w
                     }
                 } else {
-                    x = titleLabels[i - 1].frame.maxX + style.itemMargin
+                    x = titleLabels[i - 1].frame.maxX + style.titleMargin
                 }
             } else { // 不可以滚动, 平分
                 w = bounds.width / CGFloat(count)
                 x = CGFloat(i) * w
-                if i == 0 && style.isShowScrollLine {
+                if i == 0 && style.isShowBottomLine {
                     bottomLine.frame.origin.x = 0
                     bottomLine.frame.size.width = w
                 }
             }
             label.frame = CGRect(x: x, y: y, width: w, height: h)
         }
-        scrollView.contentSize = style.isScrollEnable ? CGSize(width: titleLabels.last!.frame.maxX + style.itemMargin * 0.5, height: 0) : CGSize.zero
+        scrollView.contentSize = style.isScrollEnable ? CGSize(width: titleLabels.last!.frame.maxX + style.titleMargin * 0.5, height: 0) : CGSize.zero
     }
     private func setupBottomLine() {
         scrollView.addSubview(bottomLine)
@@ -120,7 +131,7 @@ extension GCTitleView {
         adjustTitleLabel(label.tag)
         
         // 调整bottomLine
-        if style.isShowScrollLine {
+        if style.isShowBottomLine {
             UIView.animate(withDuration: 0.3) {
                 self.bottomLine.frame.origin.x = label.frame.origin.x
                 self.bottomLine.frame.size.width = label.frame.size.width
@@ -144,14 +155,14 @@ extension GCTitleView: GCContentViewDelegate {
         let sourceLabel = titleLabels[currentIndex]
         
         // 颜色渐变
-        let deltaRGB = UIColor.getRGBDelta(style.selectColor, style.normalColor)
+        let deltaRGB = UIColor.getRGBDelta(style.selectedColor, style.normalColor)
         let normalRGB = style.normalColor.getRGB()
-        let selectRGB = style.selectColor.getRGB()
+        let selectRGB = style.selectedColor.getRGB()
         targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
         sourceLabel.textColor = UIColor(r: selectRGB.0 - deltaRGB.0 * progress, g: selectRGB.1 - deltaRGB.1 * progress, b: selectRGB.2 - deltaRGB.2 * progress)
         
         // 指示器移动与渐变
-        if style.isShowScrollLine {
+        if style.isShowBottomLine {
             let deltaX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
             let deltaW = targetLabel.frame.size.width - sourceLabel.frame.size.width
             bottomLine.frame.origin.x = sourceLabel.frame.origin.x + deltaX * progress
@@ -169,7 +180,7 @@ extension GCTitleView: GCContentViewDelegate {
         let sourceLabel = titleLabels[currentIndex]
         
         // 切换文字颜色
-        targetLabel.textColor = style.selectColor
+        targetLabel.textColor = style.selectedColor
         sourceLabel.textColor = style.normalColor
         
         // 记录下标值
@@ -187,3 +198,70 @@ extension GCTitleView: GCContentViewDelegate {
         }
     }
 }
+// MARK:- 对外暴露的方法
+extension GCTitleView {
+    func setTitleWithProgress(_ progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+        // 1.取出sourceLabel/targetLabel
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        
+        // 3.颜色的渐变(复杂)
+        // 3.1.取出变化的范围
+        let colorDelta = (selectedColorRGB.0 - normalColorRGB.0, selectedColorRGB.1 - normalColorRGB.1, selectedColorRGB.2 - normalColorRGB.2)
+        
+        // 3.2.变化sourceLabel
+        sourceLabel.textColor = UIColor(r: selectedColorRGB.0 - colorDelta.0 * progress, g: selectedColorRGB.1 - colorDelta.1 * progress, b: selectedColorRGB.2 - colorDelta.2 * progress)
+        
+        // 3.2.变化targetLabel
+        targetLabel.textColor = UIColor(r: normalColorRGB.0 + colorDelta.0 * progress, g: normalColorRGB.1 + colorDelta.1 * progress, b: normalColorRGB.2 + colorDelta.2 * progress)
+        
+        // 4.记录最新的index
+        currentIndex = targetIndex
+        
+        
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveTotalW = targetLabel.frame.width - sourceLabel.frame.width
+        
+        // 5.计算滚动的范围差值
+        if style.isShowBottomLine {
+            bottomLine.frame.size.width = sourceLabel.frame.width + moveTotalW * progress
+            bottomLine.frame.origin.x = sourceLabel.frame.origin.x + moveTotalX * progress
+        }
+        
+        // 6.放大的比例
+        if style.isNeedScale {
+            let scaleDelta = (style.scaleRange - 1.0) * progress
+            sourceLabel.transform = CGAffineTransform(scaleX: style.scaleRange - scaleDelta, y: style.scaleRange - scaleDelta)
+            targetLabel.transform = CGAffineTransform(scaleX: 1.0 + scaleDelta, y: 1.0 + scaleDelta)
+        }
+        
+        // 7.计算cover的滚动
+        if style.isShowCover {
+            coverView.frame.size.width = style.isScrollEnable ? (sourceLabel.frame.width + 2 * style.coverMargin + moveTotalW * progress) : (sourceLabel.frame.width + moveTotalW * progress)
+            coverView.frame.origin.x = style.isScrollEnable ? (sourceLabel.frame.origin.x - style.coverMargin + moveTotalX * progress) : (sourceLabel.frame.origin.x + moveTotalX * progress)
+        }
+    }
+    
+    func contentViewDidEndScroll() {
+        // 0.如果是不需要滚动,则不需要调整中间位置
+        guard style.isScrollEnable else { return }
+        
+        // 1.获取获取目标的Label
+        let targetLabel = titleLabels[currentIndex]
+        
+        // 2.计算和中间位置的偏移量
+        var offSetX = targetLabel.center.x - bounds.width * 0.5
+        if offSetX < 0 {
+            offSetX = 0
+        }
+        
+        let maxOffset = scrollView.contentSize.width - bounds.width
+        if offSetX > maxOffset {
+            offSetX = maxOffset
+        }
+        
+        // 3.滚动UIScrollView
+        scrollView.setContentOffset(CGPoint(x: offSetX, y: 0), animated: true)
+    }
+}
+
