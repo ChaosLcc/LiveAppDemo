@@ -24,6 +24,8 @@
 		BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F2324347A7900B015DF /* AnchorModel.swift */; };
 		BA805F272434825600B015DF /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F262434825600B015DF /* NetworkTools.swift */; };
 		BA813A87243AB5B30013E937 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA813A86243AB5B30013E937 /* NibLoadable.swift */; };
+		BA8229272445425300228171 /* ChatToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8229222445425300228171 /* ChatToolsView.swift */; };
+		BA82292A2445425300228171 /* ChatToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8229252445425300228171 /* ChatToolsView.xib */; };
 		BA8293FB243730F400F85367 /* Emitterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8293FA243730F400F85367 /* Emitterable.swift */; };
 		BA8799912435682D0051880B /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA87998F2435682D0051880B /* HomeViewCell.xib */; };
 		BA8799922435682D0051880B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8799902435682D0051880B /* HomeViewCell.swift */; };
@@ -63,6 +65,8 @@
 		BA805F2324347A7900B015DF /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		BA805F262434825600B015DF /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		BA813A86243AB5B30013E937 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		BA8229222445425300228171 /* ChatToolsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatToolsView.swift; sourceTree = "<group>"; };
+		BA8229252445425300228171 /* ChatToolsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatToolsView.xib; sourceTree = "<group>"; };
 		BA8293FA243730F400F85367 /* Emitterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitterable.swift; sourceTree = "<group>"; };
 		BA87998F2435682D0051880B /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		BA8799902435682D0051880B /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +135,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		BA8229202445425300228171 /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				BA8229222445425300228171 /* ChatToolsView.swift */,
+				BA8229252445425300228171 /* ChatToolsView.xib */,
+			);
+			path = ChatView;
+			sourceTree = "<group>";
+		};
 		BA8293F9243730D600F85367 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +182,7 @@
 		BA879996243588480051880B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA8229202445425300228171 /* ChatView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,6 +466,7 @@
 				BAAC159E242E49CB004030A5 /* Profile.storyboard in Resources */,
 				BA61D10D242E4FF900D84B86 /* LaunchScreen.storyboard in Resources */,
 				BAAC15A4242E4B01004030A5 /* Discover.storyboard in Resources */,
+				BA82292A2445425300228171 /* ChatToolsView.xib in Resources */,
 				BAAC1585242E48E8004030A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +537,7 @@
 				BA7F3548243C7CEA007995BF /* GCPageCollectionViewLayout.swift in Sources */,
 				BA61D10F242E51E500D84B86 /* HomeViewController.swift in Sources */,
 				BA805F1A24342D0900B015DF /* Const.swift in Sources */,
+				BA8229272445425300228171 /* ChatToolsView.swift in Sources */,
 				BA805F272434825600B015DF /* NetworkTools.swift in Sources */,
 				BA7F3549243C7CEA007995BF /* GCTitleView.swift in Sources */,
 				BA805F20243479D600B015DF /* HomeViewModel.swift in Sources */,
