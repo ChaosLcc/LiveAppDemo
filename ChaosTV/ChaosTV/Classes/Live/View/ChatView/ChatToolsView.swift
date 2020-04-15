@@ -17,6 +17,13 @@ class ChatToolsView: UIView, NibLoadable {
     weak var delegate : ChatToolsViewDelegate?
     
     fileprivate lazy var emoticonBtn : UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+    private lazy var emoticonView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 250 + kBottomSafeHeight))
+        view.backgroundColor = UIColor.clear
+        let eView = EmoticonView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 250))
+        view.addSubview(eView)
+        return view
+    }()
 //    fileprivate lazy var emotionView : EmoticonView = EmoticonView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 206), emoticonClickCallback : {[weak self] (emoticon : Emoticon) in
 //        self?.insertEmotion(emoticon)
 //    })
@@ -65,9 +72,9 @@ extension ChatToolsView {
 
         let textRange = inputTextField.selectedTextRange
 
-//        inputTextField.resignFirstResponder()
-//        inputTextField.inputView = inputTextField.inputView == nil ? emotionView : nil
-//        inputTextField.becomeFirstResponder()
+        inputTextField.resignFirstResponder()
+        inputTextField.inputView = inputTextField.inputView == nil ? emoticonView : nil
+        inputTextField.becomeFirstResponder()
 
         inputTextField.selectedTextRange = textRange
     }

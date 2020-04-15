@@ -1,86 +1,58 @@
 //
 //  EmoticonView.swift
-//  XMGTV
+//  ChaosTV
 //
-//  Created by apple on 16/11/14.
-//  Copyright © 2016年 coderwhy. All rights reserved.
+//  Created by Liubi_Chaos_G on 2020/4/15.
+//  Copyright © 2020 Liubi_Chaos_G. All rights reserved.
 //
 
 import UIKit
 
-private let kEmoticonCellID = "kEmoticonCellID"
+private let kEmoticonViewCell = "kEmoticonViewCell"
 
 class EmoticonView: UIView {
-    
-    fileprivate var pageCollectionView : HYPageCollectionView!
-    
-    fileprivate var emoticonClickCallback : (_ emoticon : Emoticon) -> ()
-    
-    init(frame: CGRect, emoticonClickCallback : @escaping (_ emoticon : Emoticon) -> ()) {
-        self.emoticonClickCallback = emoticonClickCallback
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupUI()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-
-extension EmoticonView {
-    fileprivate func setupUI() {
-        
-        backgroundColor = UIColor(white: 0.0, alpha: 0.8)
-        
-        let titles = ["普通", "粉丝专属"]
-        
-        let style = HYTitleStyle()
-        style.normalColor = UIColor(r: 255, g: 255, b: 255)
-        style.isScrollEnable = false
+    
+    private func setupUI() {
+        var style = GCPageStyle()
         style.isShowBottomLine = true
-        
-        let layout = HYContentFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let layout = GCPageCollectionViewLayout()
         layout.cols = 7
         layout.rows = 3
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        pageCollectionView = HYPageCollectionView(frame: bounds, titles: titles, style: style, isTitleInTop: false, layout: layout)
+        let pageCollectionView = GCPageCollectionView(frame: bounds, titles: ["普通", "粉丝专属"], style: style, isTitleInTop: false, layout: layout)
+        
         addSubview(pageCollectionView)
-        
         pageCollectionView.dataSource = self
-        pageCollectionView.delegate = self
-        pageCollectionView.regist(nib: UINib(nibName: "EmoticonViewCell", bundle: nil), forCellID: kEmoticonCellID)
+        pageCollectionView.register(nib: UINib(nibName: "EmoticonViewCell", bundle: nil), forCellWithReuseIdentifier: kEmoticonViewCell)
     }
 }
-
-
-extension EmoticonView : HYPageCollectionViewDataSource, HYPageCollectionViewDelegate {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+extension EmoticonView: GCPageCollectionViewDataSource {
+    func numberOfSections(in pageCollectionView: GCPageCollectionView) -> Int {
         return EmoticonViewModel.shareInstance.packages.count
     }
     
-    func pageCollectionView(_ collectionView: UICollectionView, numsOfItemsInSection section: Int) -> Int {
-        let package = EmoticonViewModel.shareInstance.packages[section]
-        
-        return package.emoticons.count
+    func pageCollectionView(_ pageCollectionView: GCPageCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return EmoticonViewModel.shareInstance.packages[section].emoticons.count
     }
     
-    func pageCollectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kEmoticonCellID, for: indexPath) as! EmoticonViewCell
-        
-        let package = EmoticonViewModel.shareInstance.packages[indexPath.section]
-        cell.emoticon = package.emoticons[indexPath.item]
-        
+    func pageCollectionView(_ pageCollectionView: GCPageCollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = pageCollectionView.dequeueReuseableCell(withReuseIdentifier: kEmoticonViewCell, for: indexPath) as! EmoticonViewCell
+//        cell.backgroundColor = UIColor.randomColor()
+        cell.emoticon = EmoticonViewModel.shareInstance.packages[indexPath.section].emoticons[indexPath.item]
         return cell
     }
     
-    func pageCollectionView(_ collectionView: UICollectionView, didSelected atIndexPath: IndexPath) {
-        let package = EmoticonViewModel.shareInstance.packages[atIndexPath.section]
-        let emoticon = package.emoticons[atIndexPath.item]
-        emoticonClickCallback(emoticon)
-    }
+    
 }

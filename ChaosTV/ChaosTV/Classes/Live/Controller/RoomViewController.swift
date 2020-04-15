@@ -105,7 +105,8 @@ extension RoomViewController {
         
         UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
             printLog(inputViewY)
-            self.chatToolsView.frame.origin.y = inputViewY
+            let endY = inputViewY == (self.view.bounds.height - kChatToolsViewHeight) ? self.view.bounds.height : inputViewY
+            self.chatToolsView.frame.origin.y = endY
             //            self.chatContentView.frame.origin.y = inputViewY - kChatContentViewH
         }) { (_) in
             

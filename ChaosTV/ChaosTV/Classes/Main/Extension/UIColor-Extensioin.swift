@@ -35,10 +35,11 @@ extension UIColor {
         range.location = 4
         let bHex = (tempHex as NSString).substring(with: range)
         // 十六进制转成数字
-        var r = 0, g = 0, b = 0
-        Scanner(string: rHex).scanInt(&r)
-        Scanner(string: gHex).scanInt(&g)
-        Scanner(string: bHex).scanInt(&b)
+        var r: UInt64 = 0, g: UInt64 = 0, b: UInt64 = 0
+//        Scanner(string: rHex).scanHexInt64(&r)
+        Scanner(string: rHex).scanHexInt64(&r)
+        Scanner(string: gHex).scanHexInt64(&g)
+        Scanner(string: bHex).scanHexInt64(&b)
         self.init(r: CGFloat(r), g: CGFloat(g), b: CGFloat(b), alpha: alpha)
     }
     class func randomColor() -> UIColor {

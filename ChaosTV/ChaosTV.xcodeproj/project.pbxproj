@@ -24,6 +24,14 @@
 		BA805F2424347A7900B015DF /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F2324347A7900B015DF /* AnchorModel.swift */; };
 		BA805F272434825600B015DF /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA805F262434825600B015DF /* NetworkTools.swift */; };
 		BA813A87243AB5B30013E937 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA813A86243AB5B30013E937 /* NibLoadable.swift */; };
+		BA81A8C92446B8750068A35F /* EmoticonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81A8C82446B8750068A35F /* EmoticonView.swift */; };
+		BA81A8CC2446F0330068A35F /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81A8CA2446F0330068A35F /* Emoticon.swift */; };
+		BA81A8CD2446F0330068A35F /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81A8CB2446F0330068A35F /* EmoticonPackage.swift */; };
+		BA81A8D02446F0580068A35F /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA81A8CE2446F0570068A35F /* QHSohuGifSort.plist */; };
+		BA81A8D12446F0580068A35F /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA81A8CF2446F0570068A35F /* QHNormalEmotionSort.plist */; };
+		BA81A8D32446F3E40068A35F /* EmoticonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81A8D22446F3E40068A35F /* EmoticonViewModel.swift */; };
+		BA81A8D62446FA7E0068A35F /* EmoticonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA81A8D42446FA7D0068A35F /* EmoticonViewCell.xib */; };
+		BA81A8D72446FA7E0068A35F /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81A8D52446FA7E0068A35F /* EmoticonViewCell.swift */; };
 		BA8229272445425300228171 /* ChatToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8229222445425300228171 /* ChatToolsView.swift */; };
 		BA82292A2445425300228171 /* ChatToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8229252445425300228171 /* ChatToolsView.xib */; };
 		BA8293FB243730F400F85367 /* Emitterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8293FA243730F400F85367 /* Emitterable.swift */; };
@@ -65,6 +73,14 @@
 		BA805F2324347A7900B015DF /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		BA805F262434825600B015DF /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		BA813A86243AB5B30013E937 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		BA81A8C82446B8750068A35F /* EmoticonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonView.swift; sourceTree = "<group>"; };
+		BA81A8CA2446F0330068A35F /* Emoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		BA81A8CB2446F0330068A35F /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
+		BA81A8CE2446F0570068A35F /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
+		BA81A8CF2446F0570068A35F /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
+		BA81A8D22446F3E40068A35F /* EmoticonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonViewModel.swift; sourceTree = "<group>"; };
+		BA81A8D42446FA7D0068A35F /* EmoticonViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmoticonViewCell.xib; sourceTree = "<group>"; };
+		BA81A8D52446FA7E0068A35F /* EmoticonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewCell.swift; sourceTree = "<group>"; };
 		BA8229222445425300228171 /* ChatToolsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatToolsView.swift; sourceTree = "<group>"; };
 		BA8229252445425300228171 /* ChatToolsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatToolsView.xib; sourceTree = "<group>"; };
 		BA8293FA243730F400F85367 /* Emitterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitterable.swift; sourceTree = "<group>"; };
@@ -138,8 +154,11 @@
 		BA8229202445425300228171 /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
+				BA81A8D52446FA7E0068A35F /* EmoticonViewCell.swift */,
+				BA81A8D42446FA7D0068A35F /* EmoticonViewCell.xib */,
 				BA8229222445425300228171 /* ChatToolsView.swift */,
 				BA8229252445425300228171 /* ChatToolsView.xib */,
+				BA81A8C82446B8750068A35F /* EmoticonView.swift */,
 			);
 			path = ChatView;
 			sourceTree = "<group>";
@@ -175,6 +194,9 @@
 		BA879995243588410051880B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA81A8CA2446F0330068A35F /* Emoticon.swift */,
+				BA81A8CB2446F0330068A35F /* EmoticonPackage.swift */,
+				BA81A8D22446F3E40068A35F /* EmoticonViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +263,8 @@
 		BA8BC1102434246000225E69 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BA81A8CF2446F0570068A35F /* QHNormalEmotionSort.plist */,
+				BA81A8CE2446F0570068A35F /* QHSohuGifSort.plist */,
 				BA8BC1112434246000225E69 /* types.plist */,
 			);
 			path = Resource;
@@ -460,11 +484,14 @@
 				BAAC15A0242E49CB004030A5 /* Rank.storyboard in Resources */,
 				BAAC1587242E48EA004030A5 /* Assets.xcassets in Resources */,
 				BA8BC1122434246000225E69 /* types.plist in Resources */,
+				BA81A8D12446F0580068A35F /* QHNormalEmotionSort.plist in Resources */,
+				BA81A8D02446F0580068A35F /* QHSohuGifSort.plist in Resources */,
 				BA8799912435682D0051880B /* HomeViewCell.xib in Resources */,
 				BAAC15A2242E4AFB004030A5 /* Home.storyboard in Resources */,
 				BA87999A2435888A0051880B /* RoomViewController.xib in Resources */,
 				BAAC159E242E49CB004030A5 /* Profile.storyboard in Resources */,
 				BA61D10D242E4FF900D84B86 /* LaunchScreen.storyboard in Resources */,
+				BA81A8D62446FA7E0068A35F /* EmoticonViewCell.xib in Resources */,
 				BAAC15A4242E4B01004030A5 /* Discover.storyboard in Resources */,
 				BA82292A2445425300228171 /* ChatToolsView.xib in Resources */,
 				BAAC1585242E48E8004030A5 /* Main.storyboard in Resources */,
@@ -522,8 +549,11 @@
 			files = (
 				BA805F22243479E500B015DF /* WaterfallLayout.swift in Sources */,
 				BAAC159F242E49CB004030A5 /* MainViewController.swift in Sources */,
+				BA81A8D72446FA7E0068A35F /* EmoticonViewCell.swift in Sources */,
+				BA81A8CD2446F0330068A35F /* EmoticonPackage.swift in Sources */,
 				BA8799992435888A0051880B /* RoomViewController.swift in Sources */,
 				BAAC157E242E48E8004030A5 /* AppDelegate.swift in Sources */,
+				BA81A8CC2446F0330068A35F /* Emoticon.swift in Sources */,
 				BA813A87243AB5B30013E937 /* NibLoadable.swift in Sources */,
 				BA7F3546243C7CEA007995BF /* GCPageStyle.swift in Sources */,
 				BA7F354A243C7CEA007995BF /* GCPageCollectionView.swift in Sources */,
@@ -532,6 +562,8 @@
 				BA8799922435682D0051880B /* HomeViewCell.swift in Sources */,
 				BA8BC11C2434260C00225E69 /* BaseModel.swift in Sources */,
 				BA8BC1142434248A00225E69 /* HomeType.swift in Sources */,
+				BA81A8C92446B8750068A35F /* EmoticonView.swift in Sources */,
+				BA81A8D32446F3E40068A35F /* EmoticonViewModel.swift in Sources */,
 				BAF2E49F242F2FB900227905 /* UIColor-Extensioin.swift in Sources */,
 				BA61D111242E525F00D84B86 /* ChaosNavigationController.swift in Sources */,
 				BA7F3548243C7CEA007995BF /* GCPageCollectionViewLayout.swift in Sources */,

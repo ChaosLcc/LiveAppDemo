@@ -46,7 +46,7 @@ extension GCPageCollectionView {
     func register(cell: AnyClass?, forCellWithReuseIdentifier identifier: String) {
         collectionView.register(cell, forCellWithReuseIdentifier: identifier)
     }
-    func register(nib: AnyClass?, forCellWithReuseIdentifier identifier: String) {
+    func register(nib: UINib?, forCellWithReuseIdentifier identifier: String) {
         collectionView.register(nib, forCellWithReuseIdentifier: identifier)
     }
     
@@ -61,7 +61,7 @@ extension GCPageCollectionView {
         let titleViewY = isTitleInTop ? 0 : bounds.height - style.titleHeight
         let titleFrame = CGRect(x: 0, y: titleViewY, width: bounds.width, height: style.titleHeight)
         titleView = GCTitleView(frame: titleFrame, titles: titles, style: style)
-        titleView.backgroundColor = UIColor.randomColor()
+        titleView.backgroundColor = UIColor.white
         titleView.delegate = self
         addSubview(titleView)
         
@@ -71,18 +71,19 @@ extension GCPageCollectionView {
         let pageControlFrame = CGRect(x: 0, y: pageControlY, width: bounds.width, height: pageControlH)
         pageControl = UIPageControl(frame: pageControlFrame)
         pageControl.numberOfPages = 4
-        pageControl.backgroundColor = UIColor.randomColor()
+//        pageControl.backgroundColor = UIColor(hex: "#e6e6e6")
         addSubview(pageControl)
         // collectionView
         let collectionViewY: CGFloat = isTitleInTop ? style.titleHeight : 0
         let collectionViewFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - style.titleHeight - pageControlH)
         collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.randomColor()
+        collectionView.backgroundColor = UIColor(hex: "#e6e6e6")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         addSubview(collectionView)
+        pageControl.backgroundColor = collectionView.backgroundColor
     }
 }
 extension GCPageCollectionView: UICollectionViewDataSource {
