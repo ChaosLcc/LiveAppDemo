@@ -17,16 +17,13 @@ class ChatToolsView: UIView, NibLoadable {
     weak var delegate : ChatToolsViewDelegate?
     
     fileprivate lazy var emoticonBtn : UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-    private lazy var emoticonView: UIView = {
+    private lazy var emoticonView: EmoticonView = EmoticonView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 250))
+    private lazy var emoticonInputView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 250 + kBottomSafeHeight))
         view.backgroundColor = UIColor.clear
-        let eView = EmoticonView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 250))
-        view.addSubview(eView)
+        view.addSubview(self.emoticonView)
         return view
     }()
-//    fileprivate lazy var emotionView : EmoticonView = EmoticonView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 206), emoticonClickCallback : {[weak self] (emoticon : Emoticon) in
-//        self?.insertEmotion(emoticon)
-//    })
     
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var sendMsgBtn: UIButton!
@@ -63,6 +60,17 @@ extension ChatToolsView {
         inputTextField.rightView = emoticonBtn
         inputTextField.rightViewMode = .always
         inputTextField.allowsEditingTextAttributes = true
+        
+        emoticonView.emoticonClickCallback = { [weak self] emoticon in
+            if emoticon.emoticonName == "delete-n" {
+                self?.inputTextField.deleteBackward()
+                return
+            }
+            guard let range = self?.inputTextField.selectedTextRange else {
+                return
+            }
+            self?.inputTextField.replace(range, withText: emoticon.emoticonName)
+        }
     }
 }
 
@@ -73,20 +81,9 @@ extension ChatToolsView {
         let textRange = inputTextField.selectedTextRange
 
         inputTextField.resignFirstResponder()
-        inputTextField.inputView = inputTextField.inputView == nil ? emoticonView : nil
+        inputTextField.inputView = inputTextField.inputView == nil ? emoticonInputView : nil
         inputTextField.becomeFirstResponder()
 
         inputTextField.selectedTextRange = textRange
     }
-    
-//    fileprivate func insertEmotion(_ emoticon : Emoticon) {
-//        // 1.点击了删除按钮
-//        if emoticon.emoticonName == "delete-n" {
-//            inputTextField.deleteBackward()
-//            return
-//        }
-//
-//        // 2.插入文字
-//        inputTextField.replace(inputTextField.selectedTextRange!, withText: emoticon.emoticonName)
-//    }
 }

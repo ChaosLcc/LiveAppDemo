@@ -22,6 +22,9 @@ struct GCPageStyle {
     /// title的高度
     var titleHeight : CGFloat = 44
     
+    var titleViewBackgroundColor: UIColor = UIColor.black
+    var pageViewBackgroundColor: UIColor = UIColor.black
+    
     /// 是否显示底部滚动条
     var isShowBottomLine : Bool = false
     /// 底部滚动条的颜色

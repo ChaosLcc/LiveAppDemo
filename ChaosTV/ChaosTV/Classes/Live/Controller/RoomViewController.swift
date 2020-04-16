@@ -10,6 +10,7 @@ import UIKit
 
 private let kChatToolsViewHeight: CGFloat = 44
 private let kChatContentViewH : CGFloat = 160
+private let kGiftListViewHeight : CGFloat = kScreenH * 0.5
 
 class RoomViewController: UIViewController, Emitterable {
     
@@ -17,6 +18,7 @@ class RoomViewController: UIViewController, Emitterable {
     @IBOutlet weak var bgImageView: UIImageView!
     
     private lazy var chatToolsView: ChatToolsView = ChatToolsView.loadFromNib()
+    private lazy var giftListView: GiftListView = GiftListView.loadFromNib()
     
     // MARK: 系统回调函数
     override func viewDidLoad() {
@@ -63,9 +65,24 @@ extension RoomViewController {
         // viewDidLoad()中设置frame(注意: 这里用的是view的height和width) view通过xib加载的尺寸在viewDidLoad中不准确, 导致frame错误
         // 可以通过下面代码设置autoresizingMask 或者 在viewWillLayoutSubviews()中设置frame
         chatToolsView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+        chatToolsView.delegate = self
+        
+        view.addSubview(giftListView)
+        giftListView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftListViewHeight)
+        giftListView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+        giftListView.delegate = self
     }
 }
-
+extension RoomViewController: ChatToolsViewDelegate {
+    func chatToolsView(toolView: ChatToolsView, message: String) {
+        printLog(message)
+    }
+}
+extension RoomViewController: GiftListViewDelegate {
+    func giftListView(giftView: GiftListView, giftModel: GiftModel) {
+        printLog(giftModel.img2)
+    }
+}
 
 // MARK:- 事件监听
 extension RoomViewController {
@@ -82,6 +99,9 @@ extension RoomViewController {
             print("点击了分享")
         case 2:
             print("点击了礼物")
+            UIView.animate(withDuration: 0.3) {
+                self.giftListView.frame.origin.y = self.view.bounds.height - kGiftListViewHeight
+            }
         case 3:
             print("点击了更多")
         case 4:
@@ -96,6 +116,9 @@ extension RoomViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         chatToolsView.inputTextField.resignFirstResponder()
+        UIView.animate(withDuration: 0.3) {
+            self.giftListView.frame.origin.y = self.view.bounds.height
+        }
     }
     
     @objc private func keyboardWillChangeFrame(_ note : Notification) {

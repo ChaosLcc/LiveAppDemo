@@ -15,6 +15,10 @@ protocol GCPageCollectionViewDataSource: AnyObject {
     func pageCollectionView(_ pageCollectionView: GCPageCollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
 }
 
+protocol GCPageCollectionViewDelegate: AnyObject {
+        func pageCollectionView(_ pageCollectionView: GCPageCollectionView, didSelectItemAt indexPath: IndexPath)
+}
+
 class GCPageCollectionView: UIView {
     private var titles: [String]
     private var style: GCPageStyle
@@ -26,6 +30,7 @@ class GCPageCollectionView: UIView {
     private var sourceIndexPath: IndexPath = IndexPath(item: 0, section: 0)
     
     weak var dataSource: GCPageCollectionViewDataSource?
+    weak var delegate: GCPageCollectionViewDelegate?
     
     init(frame: CGRect, titles: [String], style: GCPageStyle, isTitleInTop: Bool, layout: GCPageCollectionViewLayout) {
         self.titles = titles
@@ -53,6 +58,9 @@ extension GCPageCollectionView {
     func dequeueReuseableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
     }
+    func reloadData() {
+        collectionView.reloadData()
+    }
 }
 
 extension GCPageCollectionView {
@@ -61,7 +69,7 @@ extension GCPageCollectionView {
         let titleViewY = isTitleInTop ? 0 : bounds.height - style.titleHeight
         let titleFrame = CGRect(x: 0, y: titleViewY, width: bounds.width, height: style.titleHeight)
         titleView = GCTitleView(frame: titleFrame, titles: titles, style: style)
-        titleView.backgroundColor = UIColor.white
+        titleView.backgroundColor = style.titleViewBackgroundColor
         titleView.delegate = self
         addSubview(titleView)
         
@@ -77,13 +85,28 @@ extension GCPageCollectionView {
         let collectionViewY: CGFloat = isTitleInTop ? style.titleHeight : 0
         let collectionViewFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - style.titleHeight - pageControlH)
         collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(hex: "#e6e6e6")
+        collectionView.backgroundColor = style.pageViewBackgroundColor
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         addSubview(collectionView)
         pageControl.backgroundColor = collectionView.backgroundColor
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let titleViewY = isTitleInTop ? 0 : bounds.height - style.titleHeight
+        let titleFrame = CGRect(x: 0, y: titleViewY, width: bounds.width, height: style.titleHeight)
+        titleView = GCTitleView(frame: titleFrame, titles: titles, style: style)
+        
+        let pageControlH: CGFloat = 20.0
+        let pageControlY = isTitleInTop ? (bounds.height - pageControlH) : (bounds.height - pageControlH - style.titleHeight)
+        let pageControlFrame = CGRect(x: 0, y: pageControlY, width: bounds.width, height: pageControlH)
+        pageControl.frame = pageControlFrame
+        
+        let collectionViewY: CGFloat = isTitleInTop ? style.titleHeight : 0
+        let collectionViewFrame = CGRect(x: 0, y: collectionViewY, width: bounds.width, height: bounds.height - style.titleHeight - pageControlH)
+        collectionView.frame = collectionViewFrame
     }
 }
 extension GCPageCollectionView: UICollectionViewDataSource {
@@ -107,6 +130,9 @@ extension GCPageCollectionView: UICollectionViewDataSource {
 }
 
 extension GCPageCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.pageCollectionView(self, didSelectItemAt: indexPath)
+    }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollViewEndScroll()
     }
