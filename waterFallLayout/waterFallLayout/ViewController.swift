@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, WaterfallLayoutDataSource, UICollectionViewDataSource {
-
+    var cellCount = 30
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -18,7 +18,7 @@ class ViewController: UIViewController, WaterfallLayoutDataSource, UICollectionV
         waterfall.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: waterfall)
         collectionView.dataSource = self
-        
+        collectionView.backgroundColor = UIColor.orange
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellID")
         
         view.addSubview(collectionView)
@@ -31,11 +31,15 @@ class ViewController: UIViewController, WaterfallLayoutDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return cellCount
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellID", for: indexPath)
         cell.backgroundColor = UIColor.red
+//        if indexPath.item == cellCount - 1 { // 模拟上拉加载更多
+//            cellCount += 30
+//            collectionView.reloadData()
+//        }
         return cell
     }
 }

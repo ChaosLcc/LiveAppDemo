@@ -33,7 +33,7 @@ extension WaterfallLayout {
         // 获取列数
         let cols = dataSource?.numberOfColsInWaterfallLayout(self) ?? 2
         // 计算Item的宽度
-        let itemW = (collectionView!.bounds.width - self.sectionInset.left - self.sectionInset.right - self.minimumInteritemSpacing) / CGFloat(cols)
+        let itemW = (collectionView!.bounds.width - self.sectionInset.left - self.sectionInset.right - (self.minimumInteritemSpacing * CGFloat(cols - 1))) / CGFloat(cols)
         // 计算所有的item的属性
         for i in startIndex ..< itemCount {
             // 1.设置每一个item位置相关的属性
@@ -45,13 +45,13 @@ extension WaterfallLayout {
                 fatalError("请设置数据源,并且实现对应的数据源方法")
             }
             // 4.取出最小列的位置
-            var minH = colHeights.min()!
+            let minH = colHeights.min()!
             let index = colHeights.firstIndex(of: minH)!
-            minH = minH + height + minimumLineSpacing
-            colHeights[index] = minH
+            let itemX = self.sectionInset.left + (self.minimumInteritemSpacing + itemW) * CGFloat(index)
             // 5.设置item的属性
-            attrs.frame = CGRect(x: self.sectionInset.left + (self.minimumInteritemSpacing + itemW) * CGFloat(index), y: minH - height - self.minimumLineSpacing, width: itemW, height: height)
+            attrs.frame = CGRect(x: itemX, y: minH, width: itemW, height: height)
             attrsArray.append(attrs)
+            colHeights[index] = minH + height + minimumLineSpacing
         }
         // 记录最大值
         maxH = colHeights.max()!

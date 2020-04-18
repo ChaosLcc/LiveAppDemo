@@ -88,11 +88,15 @@ extension GCContentView: UICollectionViewDelegate {
     /// 监听停止减速
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         contentViewEndScroll()
+        // 解决连续滑动出现的bug
+        scrollView.isScrollEnabled = true
     }
     /// 监听停止手势拖动
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate { // 没有减速 = 停止了
             contentViewEndScroll()
+        } else { // 解决连续滑动出现的bug
+            scrollView.isScrollEnabled = false
         }
     }
     
