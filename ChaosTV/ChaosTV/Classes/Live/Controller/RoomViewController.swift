@@ -9,8 +9,8 @@
 import UIKit
 
 private let kChatToolsViewHeight: CGFloat = 44
-private let kChatContentViewH : CGFloat = 160
 private let kGiftListViewHeight : CGFloat = kScreenH * 0.5
+private let kChatContentViewHeight : CGFloat = 200
 
 class RoomViewController: UIViewController, Emitterable {
     
@@ -19,6 +19,7 @@ class RoomViewController: UIViewController, Emitterable {
     
     private lazy var chatToolsView: ChatToolsView = ChatToolsView.loadFromNib()
     private lazy var giftListView: GiftListView = GiftListView.loadFromNib()
+    private lazy var chatContentView: ChatContentView = ChatContentView.loadFromNib()
     
     // MARK: 系统回调函数
     override func viewDidLoad() {
@@ -71,11 +72,16 @@ extension RoomViewController {
         giftListView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftListViewHeight)
         giftListView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
         giftListView.delegate = self
+        
+        view.addSubview(chatContentView)
+        chatContentView.frame = CGRect(x: 0, y: view.bounds.height - kChatToolsViewHeight - kChatContentViewHeight - kBottomSafeHeight, width: view.bounds.width, height: kChatContentViewHeight)
+        chatContentView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
     }
 }
 extension RoomViewController: ChatToolsViewDelegate {
     func chatToolsView(toolView: ChatToolsView, message: String) {
         printLog(message)
+        chatContentView.insertMsg(message)
     }
 }
 extension RoomViewController: GiftListViewDelegate {
@@ -130,7 +136,9 @@ extension RoomViewController {
             printLog(inputViewY)
             let endY = inputViewY == (self.view.bounds.height - kChatToolsViewHeight) ? self.view.bounds.height : inputViewY
             self.chatToolsView.frame.origin.y = endY
-            //            self.chatContentView.frame.origin.y = inputViewY - kChatContentViewH
+            
+            let chatContentViewEndY = inputViewY == (self.view.bounds.height - kChatToolsViewHeight) ? (self.view.bounds.height - kBottomSafeHeight - kChatToolsViewHeight - kChatContentViewHeight) : (endY - kChatContentViewHeight)
+            self.chatContentView.frame.origin.y = chatContentViewEndY
         }) { (_) in
             
         }
