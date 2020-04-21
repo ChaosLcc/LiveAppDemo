@@ -61,6 +61,10 @@ extension RoomViewController {
         bgImageView.addSubview(blurView)
     }
     private func setupBottomView() {
+        view.addSubview(chatContentView)
+        chatContentView.frame = CGRect(x: 0, y: view.bounds.height - kChatToolsViewHeight - kChatContentViewHeight - kBottomSafeHeight, width: view.bounds.width, height: kChatContentViewHeight)
+        chatContentView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+        
         view.addSubview(chatToolsView)
         chatToolsView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kChatToolsViewHeight)
         // viewDidLoad()中设置frame(注意: 这里用的是view的height和width) view通过xib加载的尺寸在viewDidLoad中不准确, 导致frame错误
@@ -72,10 +76,6 @@ extension RoomViewController {
         giftListView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftListViewHeight)
         giftListView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
         giftListView.delegate = self
-        
-        view.addSubview(chatContentView)
-        chatContentView.frame = CGRect(x: 0, y: view.bounds.height - kChatToolsViewHeight - kChatContentViewHeight - kBottomSafeHeight, width: view.bounds.width, height: kChatContentViewHeight)
-        chatContentView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
     }
 }
 extension RoomViewController: ChatToolsViewDelegate {
@@ -87,6 +87,10 @@ extension RoomViewController: ChatToolsViewDelegate {
 extension RoomViewController: GiftListViewDelegate {
     func giftListView(giftView: GiftListView, giftModel: GiftModel) {
         printLog(giftModel.img2)
+        UIView.animate(withDuration: 0.3) {
+            self.giftListView.frame.origin.y = self.view.bounds.height
+        }
+        chatContentView.insertMsg("赠送 \(giftModel.subject) \(giftModel.img2)")
     }
 }
 

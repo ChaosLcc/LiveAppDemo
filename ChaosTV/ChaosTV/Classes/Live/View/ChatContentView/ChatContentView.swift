@@ -26,8 +26,10 @@ class ChatContentView: UIView, NibLoadable {
     func insertMsg(_ message: String) {
         messages.append(message)
         tableView.reloadData()
-        let indexPath = IndexPath(row: message.count - 1, section: 0)
-//        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        
+        let indexPath = IndexPath(row: messages.count - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        
     }
 }
 

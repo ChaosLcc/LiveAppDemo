@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45716F4668E8FF3AAB1D8786 /* Pods_ChaosTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E321C70B127E9886A11E61DB /* Pods_ChaosTV.framework */; };
+		BA4E0430244EEE2D009DAFA2 /* AttrStringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E042F244EEE2D009DAFA2 /* AttrStringGenerator.swift */; };
 		BA61D10D242E4FF900D84B86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA61D10B242E4FF900D84B86 /* LaunchScreen.storyboard */; };
 		BA61D10F242E51E500D84B86 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D10E242E51E500D84B86 /* HomeViewController.swift */; };
 		BA61D111242E525F00D84B86 /* ChaosNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D110242E525F00D84B86 /* ChaosNavigationController.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		67844A3D04B695006366EB54 /* Pods-ChaosTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaosTV.debug.xcconfig"; path = "Target Support Files/Pods-ChaosTV/Pods-ChaosTV.debug.xcconfig"; sourceTree = "<group>"; };
 		71DD7A210E867BCBD831B3FA /* Pods-ChaosTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaosTV.release.xcconfig"; path = "Target Support Files/Pods-ChaosTV/Pods-ChaosTV.release.xcconfig"; sourceTree = "<group>"; };
+		BA4E042F244EEE2D009DAFA2 /* AttrStringGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttrStringGenerator.swift; sourceTree = "<group>"; };
 		BA61D10C242E4FF900D84B86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA61D10E242E51E500D84B86 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA61D110242E525F00D84B86 /* ChaosNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaosNavigationController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				BA805F262434825600B015DF /* NetworkTools.swift */,
+				BA4E042F244EEE2D009DAFA2 /* AttrStringGenerator.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				BA813A87243AB5B30013E937 /* NibLoadable.swift in Sources */,
 				BA7F3546243C7CEA007995BF /* GCPageStyle.swift in Sources */,
 				BA7DA7BA24480CA20068DD20 /* Kingfisher-Extension.swift in Sources */,
+				BA4E0430244EEE2D009DAFA2 /* AttrStringGenerator.swift in Sources */,
 				BA7F354A243C7CEA007995BF /* GCPageCollectionView.swift in Sources */,
 				BA7F3547243C7CEA007995BF /* GCContentView.swift in Sources */,
 				BAAC1580242E48E8004030A5 /* SceneDelegate.swift in Sources */,
