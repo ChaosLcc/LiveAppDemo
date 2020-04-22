@@ -12,7 +12,7 @@ private let kChatContentViewCell = "kChatContentViewCell"
 
 class ChatContentView: UIView, NibLoadable {
     
-    private lazy var messages: [String] = [String]()
+    private lazy var messages: [NSAttributedString] = [NSAttributedString]()
     
     @IBOutlet weak var tableView: UITableView!
     override func awakeFromNib() {
@@ -23,7 +23,7 @@ class ChatContentView: UIView, NibLoadable {
         tableView.rowHeight = UITableView.automaticDimension
     }
 
-    func insertMsg(_ message: String) {
+    func insertMsg(_ message: NSAttributedString) {
         messages.append(message)
         tableView.reloadData()
         
@@ -40,7 +40,7 @@ extension ChatContentView:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kChatContentViewCell, for: indexPath) as! ChatContentCell
-        cell.msgLabel.text = messages[indexPath.row]
+        cell.msgLabel.attributedText = messages[indexPath.row]
         return cell
     }
     

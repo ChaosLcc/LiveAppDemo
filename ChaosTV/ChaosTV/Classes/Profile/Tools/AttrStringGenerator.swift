@@ -55,12 +55,14 @@ extension AttrStringGenerator {
         sendGiftMAttrMsg.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], range: range)
         
         guard let image = KingfisherManager.shared.cache.retrieveImageInMemoryCache(forKey: giftURL) else { return sendGiftMAttrMsg }
-//        let attachment = NSTextAttachment()
-//        attachment.image = image
-//        let font = UIFont.systemFont(ofSize: 15)
-//        attachment.bounds = CGRect(x: 0, y: -3, width: font.lineHeight, height: font.lineHeight)
-//        let imageAttrStr = NSAttributedString(attachment: attachment)
-//        
-//        chatMsgMattr.replaceCharacters(in: result.range, with: imageAttrStr)
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        let font = UIFont.systemFont(ofSize: 15)
+        attachment.bounds = CGRect(x: 0, y: -3, width: font.lineHeight, height: font.lineHeight)
+        let imageAttrStr = NSAttributedString(attachment: attachment)
+        
+        sendGiftMAttrMsg.append(imageAttrStr)
+        
+        return sendGiftMAttrMsg
     }
 }

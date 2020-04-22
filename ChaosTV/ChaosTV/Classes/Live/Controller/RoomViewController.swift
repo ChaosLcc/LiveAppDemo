@@ -81,7 +81,8 @@ extension RoomViewController {
 extension RoomViewController: ChatToolsViewDelegate {
     func chatToolsView(toolView: ChatToolsView, message: String) {
         printLog(message)
-        chatContentView.insertMsg(message)
+        let msg = AttrStringGenerator.generateTextMessage("土豪游客", message)
+        chatContentView.insertMsg(msg)
     }
 }
 extension RoomViewController: GiftListViewDelegate {
@@ -90,7 +91,8 @@ extension RoomViewController: GiftListViewDelegate {
         UIView.animate(withDuration: 0.3) {
             self.giftListView.frame.origin.y = self.view.bounds.height
         }
-        chatContentView.insertMsg("赠送 \(giftModel.subject) \(giftModel.img2)")
+        let giftMsg = AttrStringGenerator.generateGiftMessage(giftModel.subject, giftModel.img2, "土豪游客")
+        chatContentView.insertMsg(giftMsg)
     }
 }
 
