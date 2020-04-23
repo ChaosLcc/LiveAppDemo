@@ -16,6 +16,8 @@
 		BA7C7D1F24502F8E004BB2CB /* GCGiftContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C7D1E24502F8E004BB2CB /* GCGiftContainerView.swift */; };
 		BA7C7D2124502FA1004BB2CB /* GCGiftChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C7D2024502FA1004BB2CB /* GCGiftChannelView.swift */; };
 		BA7C7D2324502FBE004BB2CB /* GCGiftDigitalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C7D2224502FBE004BB2CB /* GCGiftDigitalLabel.swift */; };
+		BA8C3CF9245135D30059DC95 /* GCGiftChannelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8C3CF8245135D30059DC95 /* GCGiftChannelView.xib */; };
+		BA8C3CFB24513AD40059DC95 /* GCGiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C3CFA24513AD40059DC95 /* GCGiftModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BA7C7D1E24502F8E004BB2CB /* GCGiftContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCGiftContainerView.swift; sourceTree = "<group>"; };
 		BA7C7D2024502FA1004BB2CB /* GCGiftChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCGiftChannelView.swift; sourceTree = "<group>"; };
 		BA7C7D2224502FBE004BB2CB /* GCGiftDigitalLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCGiftDigitalLabel.swift; sourceTree = "<group>"; };
+		BA8C3CF8245135D30059DC95 /* GCGiftChannelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCGiftChannelView.xib; sourceTree = "<group>"; };
+		BA8C3CFA24513AD40059DC95 /* GCGiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCGiftModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,9 @@
 			children = (
 				BA7C7D1E24502F8E004BB2CB /* GCGiftContainerView.swift */,
 				BA7C7D2024502FA1004BB2CB /* GCGiftChannelView.swift */,
+				BA8C3CF8245135D30059DC95 /* GCGiftChannelView.xib */,
 				BA7C7D2224502FBE004BB2CB /* GCGiftDigitalLabel.swift */,
+				BA8C3CFA24513AD40059DC95 /* GCGiftModel.swift */,
 			);
 			path = GiftAnimation;
 			sourceTree = "<group>";
@@ -144,6 +150,7 @@
 			files = (
 				BA7C7D1624502EEC004BB2CB /* LaunchScreen.storyboard in Resources */,
 				BA7C7D1324502EEC004BB2CB /* Assets.xcassets in Resources */,
+				BA8C3CF9245135D30059DC95 /* GCGiftChannelView.xib in Resources */,
 				BA7C7D1124502EE8004BB2CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +167,7 @@
 				BA7C7D2124502FA1004BB2CB /* GCGiftChannelView.swift in Sources */,
 				BA7C7D2324502FBE004BB2CB /* GCGiftDigitalLabel.swift in Sources */,
 				BA7C7D1F24502F8E004BB2CB /* GCGiftContainerView.swift in Sources */,
+				BA8C3CFB24513AD40059DC95 /* GCGiftModel.swift in Sources */,
 				BA7C7D0C24502EE8004BB2CB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

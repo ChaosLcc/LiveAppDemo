@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="vlc-a1-MjP" customClass="GCGiftChannelView" customModule="GiftAnimate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHL-dB-2IQ" userLabel="背景">
+                    <rect key="frame" x="0.0" y="0.0" width="196.5" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raA-5g-qE5" customClass="GCGiftDigitalLabel" customModule="GiftAnimate" customModuleProvider="target">
+                    <rect key="frame" x="211.5" y="0.0" width="37.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eJ4-hO-SIW" userLabel="头像">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="eJ4-hO-SIW" secondAttribute="height" multiplier="1:1" id="EBF-kE-cll"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chaos_G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsd-Bg-u0d">
+                    <rect key="frame" x="54" y="5" width="46" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="送出礼物【飞机】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGt-Oo-oEi">
+                    <rect key="frame" x="54" y="27.5" width="98.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vlf-Vu-jsL" userLabel="礼物">
+                    <rect key="frame" x="152.5" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Vlf-Vu-jsL" secondAttribute="height" multiplier="1:1" id="MJK-G5-7eq"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eJ4-hO-SIW" firstAttribute="top" secondItem="vlc-a1-MjP" secondAttribute="top" id="3VP-0z-xUx"/>
+                <constraint firstAttribute="bottom" secondItem="wHL-dB-2IQ" secondAttribute="bottom" id="3dW-m6-gdm"/>
+                <constraint firstItem="Xsd-Bg-u0d" firstAttribute="top" secondItem="vlc-a1-MjP" secondAttribute="top" constant="5" id="EE9-Q9-32H"/>
+                <constraint firstItem="Xsd-Bg-u0d" firstAttribute="leading" secondItem="eJ4-hO-SIW" secondAttribute="trailing" constant="10" id="Euf-h8-kch"/>
+                <constraint firstAttribute="bottom" secondItem="ZGt-Oo-oEi" secondAttribute="bottom" constant="2" id="FhC-o0-f4P"/>
+                <constraint firstItem="Vlf-Vu-jsL" firstAttribute="leading" secondItem="ZGt-Oo-oEi" secondAttribute="trailing" id="MlN-QA-71n"/>
+                <constraint firstItem="wHL-dB-2IQ" firstAttribute="top" secondItem="vlc-a1-MjP" secondAttribute="top" id="R1i-SY-669"/>
+                <constraint firstItem="wHL-dB-2IQ" firstAttribute="leading" secondItem="vlc-a1-MjP" secondAttribute="leading" id="U0x-qu-qhk"/>
+                <constraint firstItem="raA-5g-qE5" firstAttribute="leading" secondItem="wHL-dB-2IQ" secondAttribute="trailing" constant="15" id="XoI-sl-6GN"/>
+                <constraint firstItem="raA-5g-qE5" firstAttribute="leading" secondItem="Vlf-Vu-jsL" secondAttribute="trailing" constant="15" id="XqG-sR-jLm"/>
+                <constraint firstItem="Vlf-Vu-jsL" firstAttribute="top" secondItem="vlc-a1-MjP" secondAttribute="top" id="YDk-3A-Cfu"/>
+                <constraint firstItem="ZGt-Oo-oEi" firstAttribute="leading" secondItem="eJ4-hO-SIW" secondAttribute="trailing" constant="10" id="Zfg-fB-aJN"/>
+                <constraint firstAttribute="bottom" secondItem="Vlf-Vu-jsL" secondAttribute="bottom" id="eSw-7Y-3Uc"/>
+                <constraint firstItem="raA-5g-qE5" firstAttribute="top" secondItem="vlc-a1-MjP" secondAttribute="top" id="eoU-fl-cZQ"/>
+                <constraint firstItem="eJ4-hO-SIW" firstAttribute="leading" secondItem="vlc-a1-MjP" secondAttribute="leading" id="gJZ-HG-298"/>
+                <constraint firstAttribute="bottom" secondItem="eJ4-hO-SIW" secondAttribute="bottom" id="nJ9-l7-IuL"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="i9o-Qc-D6c"/>
+            <connections>
+                <outlet property="bgView" destination="wHL-dB-2IQ" id="bRc-Hr-nl3"/>
+                <outlet property="digitLabel" destination="raA-5g-qE5" id="k9E-lA-tPS"/>
+                <outlet property="giftDescLabel" destination="ZGt-Oo-oEi" id="iYH-kH-eg8"/>
+                <outlet property="giftImageView" destination="Vlf-Vu-jsL" id="OE9-pH-z4s"/>
+                <outlet property="iconImageView" destination="eJ4-hO-SIW" id="8qW-Y3-YId"/>
+                <outlet property="senderLabel" destination="Xsd-Bg-u0d" id="a0H-Mo-hvD"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="136"/>
+        </view>
+    </objects>
+</document>
