@@ -39,6 +39,31 @@ extension GCGiftContainerView {
             let channelView = GCGiftChannelView.loadFromNib()
             channelView.frame = CGRect(x: x, y: y, width: w, height: h)
             channelView.alpha = 0.0
+            
+            channelView.complectionClosure = { channelView in
+                // 1.判断是否有缓存
+                guard self.cacheGiftModels.count != 0 else {
+                    return
+                }
+                // 2.取出缓存的第一个模型
+                let firstGiftModel = self.cacheGiftModels.first!
+                self.cacheGiftModels.removeFirst()
+                
+                // 3.遍历缓存, 将于firstGiftModel相同的模型加入channelView的缓存中
+                // 循环过程中要判断 删除集合中的元素, 会出现索引问题
+                // 倒序循环就不会出现索引问题
+                for i in (0 ..< self.cacheGiftModels.count).reversed() {
+                    let giftModel = self.cacheGiftModels[i]
+                    if giftModel.isEqual(firstGiftModel) {
+                        channelView.addOnceToCache()
+                        self.cacheGiftModels.remove(at: i)
+                    }
+                }
+                
+                // 4.让闲置的channelView执行动画
+                channelView.giftModel = firstGiftModel
+            }
+            
             addSubview(channelView)
             channelViews.append(channelView)
         }
@@ -49,10 +74,12 @@ extension GCGiftContainerView {
         // 1.判断正在动画的channelView 需不需要连击
         if let channelView = checkUsingChanelView(giftModel) {
             channelView.addOnceToCache()
+            return
         }
         // 2.判断是否有闲置channelView
         if let channelView = checkIdleChanelView(giftModel) {
             channelView.giftModel = giftModel
+            return
         }
         // 3.将数据放入缓存
         cacheGiftModels.append(giftModel)

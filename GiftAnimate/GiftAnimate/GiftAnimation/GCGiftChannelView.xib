@@ -18,7 +18,7 @@
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raA-5g-qE5" customClass="GCGiftDigitalLabel" customModule="GiftAnimate" customModuleProvider="target">
-                    <rect key="frame" x="211.5" y="0.0" width="37.5" height="24"/>
+                    <rect key="frame" x="206.5" y="0.0" width="37.5" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -58,8 +58,8 @@
                 <constraint firstItem="Vlf-Vu-jsL" firstAttribute="leading" secondItem="ZGt-Oo-oEi" secondAttribute="trailing" id="MlN-QA-71n"/>
                 <constraint firstItem="wHL-dB-2IQ" firstAttribute="top" secondItem="vlc-a1-MjP" secondAttribute="top" id="R1i-SY-669"/>
                 <constraint firstItem="wHL-dB-2IQ" firstAttribute="leading" secondItem="vlc-a1-MjP" secondAttribute="leading" id="U0x-qu-qhk"/>
-                <constraint firstItem="raA-5g-qE5" firstAttribute="leading" secondItem="wHL-dB-2IQ" secondAttribute="trailing" constant="15" id="XoI-sl-6GN"/>
-                <constraint firstItem="raA-5g-qE5" firstAttribute="leading" secondItem="Vlf-Vu-jsL" secondAttribute="trailing" constant="15" id="XqG-sR-jLm"/>
+                <constraint firstItem="raA-5g-qE5" firstAttribute="leading" secondItem="wHL-dB-2IQ" secondAttribute="trailing" constant="10" id="XoI-sl-6GN"/>
+                <constraint firstItem="raA-5g-qE5" firstAttribute="leading" secondItem="Vlf-Vu-jsL" secondAttribute="trailing" constant="10" id="XqG-sR-jLm"/>
                 <constraint firstItem="Vlf-Vu-jsL" firstAttribute="top" secondItem="vlc-a1-MjP" secondAttribute="top" id="YDk-3A-Cfu"/>
                 <constraint firstItem="ZGt-Oo-oEi" firstAttribute="leading" secondItem="eJ4-hO-SIW" secondAttribute="trailing" constant="10" id="Zfg-fB-aJN"/>
                 <constraint firstAttribute="bottom" secondItem="Vlf-Vu-jsL" secondAttribute="bottom" id="eSw-7Y-3Uc"/>

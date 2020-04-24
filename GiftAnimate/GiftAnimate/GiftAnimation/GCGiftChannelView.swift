@@ -25,6 +25,9 @@ class GCGiftChannelView: UIView {
     @IBOutlet weak var giftImageView: UIImageView!
     @IBOutlet weak var digitLabel: GCGiftDigitalLabel!
     
+    /// 动画结束的回调
+    var complectionClosure: ((_ channelView: GCGiftChannelView) -> ())?
+    
     /// 礼物连击数
     var currentNum: Int = 0
     /// channel的状态, 默认是闲置状态
@@ -80,6 +83,8 @@ extension GCGiftChannelView {
 // MARK:- 执行动画代码
 extension GCGiftChannelView {
     private func performAnimation() {
+        digitLabel.alpha = 1.0
+        digitLabel.text = " x1 "
         UIView.animate(withDuration: 0.25, animations: {
             self.alpha = 1.0
             self.frame.origin.x = 0
@@ -90,15 +95,15 @@ extension GCGiftChannelView {
     }
     private func performDigitAnimation() {
         currentNum += 1
-        digitLabel.text = "x\(currentNum)"
+        digitLabel.text = " x\(currentNum) "
         digitLabel.showDigitAnimation {
             if self.cacheNumber > 0 {
                 self.cacheNumber -= 1
-                performDigitAnimation()
+                self.performDigitAnimation()
             } else {
                 self.state = .willEnd
                 // 停留3s
-                self.perform(#selector(performEndAnimation), with: nil, afterDelay: 3)
+                self.perform(#selector(self.performEndAnimation), with: nil, afterDelay: 3)
             }
         }
     }
@@ -108,9 +113,15 @@ extension GCGiftChannelView {
             self.frame.origin.x = UIScreen.main.bounds.width
             self.alpha = 0.0
         }) { (_) in
+            self.currentNum = 0
+            self.cacheNumber = 0
             self.giftModel = nil // 一定要把模型设置为nil, 之后的操作还需要用channelView的model来进行某些判断
             self.frame.origin.x = -self.frame.width
             self.state = .idle
+            self.digitLabel.alpha = 0.0
+            if let closure = self.complectionClosure {
+                closure(self)
+            }
         }
     }
 }

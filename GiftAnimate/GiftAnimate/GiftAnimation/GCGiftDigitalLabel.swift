@@ -23,7 +23,7 @@ class GCGiftDigitalLabel: UILabel {
         super.drawText(in: rect)
     }
     
-    func showDigitAnimation(_ complection: () -> ()) {
+    func showDigitAnimation(_ complection: @escaping () -> ()) {
         UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: [], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5) {
                 self.transform = CGAffineTransform(scaleX: 3, y: 3)
@@ -35,7 +35,7 @@ class GCGiftDigitalLabel: UILabel {
             UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 10, options: [], animations: {
                 self.transform = CGAffineTransform.identity
             }) { (_) in
-                
+                complection()
             }
         }
         
